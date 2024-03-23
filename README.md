@@ -1,2 +1,3 @@
-# ligature-http-test
-A common set of tests for ligature-http implementations.
+# ligature-test-suite
+
+A common set of tests for Ligature implementations.
