@@ -1,10 +1,6 @@
 id = \i -> i,
-[
-    {
-        name = "Test basic definitions.",
-        test = (\i -> i),
-        expect = id
-    },
+
+Test.equal "Test basic definitions." (\i -> i) id
     -- {
     --     name = "Define simple lambda and call it",
     --     test = (id = \x -> x, id "hello"),
@@ -29,4 +25,3 @@ id = \i -> i,
     --         multipleC {}),
     --     expect = 5
     -- },
-]

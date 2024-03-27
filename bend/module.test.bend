@@ -1,9 +1,4 @@
-[
-    {
-        name = "Module literal",
-        test = { x = 1, y = false },
-        expect = { x = 1, y = false }
-    },
+Test.equal "Module literal" { x = 1, y = false } { x = 1, y = false },
     -- {
     --     name = "Call module",
     --     test = (test = {hello = 5}, test "hello"),
@@ -14,4 +9,3 @@
     --     test = (n = 5, Core.eq { n = n } { n }),
     --     expect = true
     -- },
-]

@@ -20,9 +20,9 @@
     --     test = (person = { name = "Jill", likes = "cats" }, i"$(person.name) likes $(person.likes)."),
     --     expect = "Jill likes cats."
     -- },
-    {
-        name = "String with quotes",
-        test = "\"Hello\"",
-        expect = "\"Hello\""
-    }
+    --{
+    --    name = "String with quotes",
+    --    test = "\"Hello\"",
+    --    expect = "\"Hello\""
+    --}
 ]

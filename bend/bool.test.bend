@@ -1,17 +1,7 @@
-external = Bool.not false,
+b = Bool.not false,
 
-[
-    {
-        name = "Basic Not test",
-        test = (Bool.not false),
-        expect = true
-    },
-    {
-        name = "Basic Not test",
-        test = external,
-        expect = true
-    },
-]
+Test.equal "Basic Not test" (Bool.not false) true,
+Test.equal "Basic Not test" b true,
 
 -- // test("not function") {
 --     //   val script = "not(true)"
