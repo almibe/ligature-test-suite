@@ -1,7 +1,1 @@
--- [
---     -- {
---     --     name = "Basic pipe.",
---     --     test = (false | Bool.not),
---     --     expect = true
---     -- },
--- ]
+Test.equal "Basic pipe." (false | Bool.not) true
