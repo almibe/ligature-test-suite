@@ -1,2 +1,6 @@
 id = `a`,
 Test.equal "Read Identifier's value" (Identifier.value id) "a",
+
+prefix = `hello://`,
+
+Test.equal "Identifier concat operator" (prefix:`test`) (`hello://test`)

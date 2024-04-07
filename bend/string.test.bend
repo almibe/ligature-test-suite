@@ -1,28 +1,8 @@
--- newLines = "hello
--- world",
+Test.equal "String with quotes" "\"Hello\t\n\"" "\"Hello\t\n\"",
+Test.equal "Encode and decode String to Bytes"
+    ("hello" | String.toBytes | String.fromBytes) "hello",
 
--- multiLine = "hello
--- world",
-
-[
-    -- {
-    --     name = "support multi-line Strings",
-    --     test = multiLine,
-    --     expect = newLines
-    -- },
-    -- {
-    --     name = "Basic String Interpolation",
-    --     test = (x = 5, i"x = $(x)"),
-    --     expect = "x = 5"
-    -- },
-    -- {
-    --     name = "Record String Interpolation",
-    --     test = (person = { name = "Jill", likes = "cats" }, i"$(person.name) likes $(person.likes)."),
-    --     expect = "Jill likes cats."
-    -- },
-    --{
-    --    name = "String with quotes",
-    --    test = "\"Hello\"",
-    --    expect = "\"Hello\""
-    --}
-]
+-- Test.equal "Basic String Interpolation" (x = 5, i"x = $(x)") "x = 5",
+-- Test.equal "Record String Interpolation"
+--   (person = { name = "Jill", likes = "cats" }, i"$(person.name) likes $(person.likes).")
+--   "Jill likes cats.",

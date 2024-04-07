@@ -1,0 +1,7 @@
+Test.equal "Write and Read Int value" (Bend.writeValue 5 | Bend.readValue) 5,
+--Test.equal "Write and Read String value" (Bend.writeValue 5 | Bend.readValue) 5,
+--Test.equal "Write and Read Bytes value" (Bend.writeValue 5 | Bend.readValue) 5,
+--Test.equal "Write and Read Bool value" (Bend.writeValue 5 | Bend.readValue) 5,
+--Test.equal "Write and Read Identifier value" (Bend.writeValue 5 | Bend.readValue) 5,
+--Test.equal "Write and Read Array value" (Bend.writeValue 5 | Bend.readValue) 5,
+--Test.equal "Write and Read Record value" (Bend.writeValue 5 | Bend.readValue) 5,
