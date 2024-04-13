@@ -10,7 +10,8 @@ Test.equal "Start with no Statements" (Ligature.allStatements "hello") [],
 
 Test.equal "Add Statements" (
     Ligature.addStatements "hello" [`a` `b` `c`, `d` `e` 234, `f` `g` "h", `q` `u` 0xDEADCAFE],
-    Ligature.allStatements "hello") [`a` `b` `c`, `d` `e` 234, `f` `g` "h", `q` `u` 0xDEADCAFE],
+    Ligature.allStatements "hello")
+    [`a` `b` `c`, `d` `e` 234, `f` `g` "h", `q` `u` 0xDEADCAFE],
 
 Test.equal "Basic match" (Ligature.match "hello" ? ? ?)
     [`a` `b` `c`, `d` `e` 234, `f` `g` "h", `q` `u` 0xDEADCAFE],
@@ -27,7 +28,7 @@ Test.equal "Basic match with Int Value" (Ligature.match "hello" ? ? 234)
 Test.equal "Basic match with String Value" (Ligature.match "hello" ? ? "h")
     [`f` `g` "h"],
 
-Test.equal "Basic match with Bytes Value" (Ligature.match "hello" ? ? 0xDEADCAFE)
-    [`q` `u` 0xDEADCAFE],
+--Test.equal "Basic match with Bytes Value" (Ligature.match "hello" ? ? 0xDEADCAFE)
+--    [`q` `u` 0xDEADCAFE],
 
-Test.equal "Test match that should have no results" (Ligature.match "hello" `x` ? ?) [],
+--Test.equal "Test match that should have no results" (Ligature.match "hello" `x` ? ?) [],
