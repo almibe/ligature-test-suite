@@ -1,4 +1,9 @@
-Test.equal "Basic when" 
+-- Assert.equal "Basic when"
+--   (when {} (
+--     {} => 1
+--   ))
+
+Assert.equal "Basic when" 
   (when (
     false          => 6,
     Bool.not true  => 7,

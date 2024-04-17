@@ -1,8 +1,8 @@
-Test.equal "Array literal" [1, 2, 3] [1, 2, 3],
-Test.equal "Call Arrays" (array = [1, 2, 3], array 0) 1,
-Test.equal "Map an Array" (Array.map Bool.not [true, false, true]) [false, true, false],
+Assert.equal "Array literal" [1, 2, 3] [1, 2, 3],
+Assert.equal "Call Arrays" (array = [1, 2, 3], array 0) 1,
+Assert.equal "Map an Array" (Array.map Bool.not [true, false, true]) [false, true, false],
 
-Test.equal "Array.reduce single item list" (Array.reduce (\x y -> x) [1]) 1,
-Test.equal "Array.reduce on Bools" (Array.reduce Bool.and [true, false, true, true]) false,
+Assert.equal "Array.reduce single item list" (Array.reduce (\x y -> x) [1]) 1,
+Assert.equal "Array.reduce on Bools" (Array.reduce Bool.and [true, false, true, true]) false,
 
 -- TODO add tests for Array.fold

@@ -1,4 +1,4 @@
-Test.equal "Module literal" { x = 1, y = false } { x = 1, y = false },
+Assert.equal "Module literal" { x = 1, y = false } { x = 1, y = false },
     -- {
     --     name = "Call module",
     --     test = (test = {hello = 5}, test "hello"),

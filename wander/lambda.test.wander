@@ -1,7 +1,7 @@
 id = \i -> i,
 
-Test.equal "Test basic definitions." (\i -> i) id,
-Test.equal "Define simple lambda and call it" (id = \x -> x, id "hello") "hello",
+Assert.equal "Test basic definitions." (\i -> i) id,
+Assert.equal "Define simple lambda and call it" (id = \x -> x, id "hello") "hello",
     -- {
     --     name = "Partial application of Host Function",
     --     test = (inc = Int.add 1, inc 4),

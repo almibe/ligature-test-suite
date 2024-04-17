@@ -1,1 +1,1 @@
-Test.equal "Basic pipe." (false | Bool.not) true
+Assert.equal "Basic pipe." (false | Bool.not) true
