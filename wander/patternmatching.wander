@@ -1,5 +1,0 @@
-x = 5,
-
--- match x
---     * 5 -> Assert.equal "Assert value" x 5
---     * Assert.fail "This shouldn't reach."

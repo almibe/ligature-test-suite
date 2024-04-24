@@ -1,19 +1,15 @@
 Assert.equal "Simple Dataset literal" 
-    (Dataset.ofArray [(`a` `b` `c`)])
+    { `a` `b` `c` }
     { `a` `b` `c` },
 
 Assert.equal "Simple Dataset literal with two Statements" 
-    (Dataset.ofArray [(`a` `b` `c`), (`d` `e` `f`)])
+    { `d` `e` `f`, `a` `b` `c` }
     { `a` `b` `c`, `d` `e` `f` },
 
 Assert.equal "Dataset literal with Value list" 
-    (Dataset.ofArray [(`a` `b` `c`), (`d` `e` `f`)])
-    { `a` `b` `c`, `d` `e` `f` },
-
-Assert.equal "Dataset literal with Value list" 
-    (Dataset.ofArray [(`a` `b` `c`), (`d` `e` `f`)])
+    { `a` `b` `c`, `a` `b` `f` }
     { `a` `b` [`c`, `f`] },
 
 Assert.equal "Dataset literal with Entity definition" 
-    (Dataset.ofArray [(`a` `b` `c`), (`a` `d` `e`)])
+    { `a` `b` `c`, `a` `d` `e` }
     { `a` { `b` `c`, `d` `e` } },

@@ -1,0 +1,11 @@
+Assert.equal "Query empty Dataset with Empty pattern"
+    (query {} * {} -> {}) {},
+
+Assert.equal "Query set with single statements with Empty pattern"
+    (query {`a` `b` `c`} * {} -> {}) {},
+
+Assert.equal "Query set with single statements with Complete matching pattern"
+    (query {`a` `b` `c`} * {`a` `b` `c`} -> {`c` `b` `a`}) {`c` `b` `a`},
+
+Assert.equal "Query set with single statements with non-matching pattern"
+    (query {`a` `b` `c`} * {`b` `b` `c`} -> {`c` `b` `a`}) {},

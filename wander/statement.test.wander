@@ -1,4 +1,0 @@
-statement = [`a`, `b`, `c`],
-Assert.equal "Statement.entity" (Statement.entity statement) `a`,
-Assert.equal "Statement.attribute" (Statement.attribute statement) `b`,
-Assert.equal "Statement.value" (Statement.value statement) `c`,
