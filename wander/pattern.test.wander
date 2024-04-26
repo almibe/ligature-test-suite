@@ -1,0 +1,45 @@
+Assert.equal "Simple Dataset literal" 
+    { `a` `b` `c` }
+    { `a` `b` `c` },
+
+Assert.equal "Simple Dataset literal with two Statements" 
+    { `d` `e` `f`, `a` `b` `c` }
+    { `a` `b` `c`, `d` `e` `f` },
+
+Assert.equal "Dataset literal with Value list" 
+    { `a` `b` `c`, `a` `b` `f` }
+    { `a` `b` [`c`, `f`] },
+
+Assert.equal "Dataset literal with Entity definition" 
+    { `a` `b` `c`, `a` `d` `e` }
+    { `a` { `b` `c`, `d` `e` } },
+
+Assert.equal "Allow Slots in Patterns"
+    { `a` `b` $ }
+    { `a` `b` $ },
+
+Assert.equal "Allow named Slots in Patterns"
+    { `a` `b` $value }
+    { `a` `b` $value },
+
+Assert.equal "Mixing Slot types in same Pattern"
+    { $ $attribute 234 }
+    { $ $attribute 234 },
+
+Assert.equal "Call isDataset on Pattern"
+    [Pattern.isDataset { `a` `a` `a` }, Pattern.isDataset { $a `a` `a` }]
+    [true, false],
+
+Assert.equal "Call captures on Pattern" 
+    [ Pattern.captures { `a` `a` `a` }, 
+        Pattern.captures { $a `a` `a` }, 
+        Pattern.captures { $ `a` 234 } ]
+    [false, true, false],
+
+Assert.equal "Call apply on a Pattern"
+    (Pattern.apply { $entity $attribute 5 } { entity = `hello`, attribute = `world`})
+    { `hello` `world` 5 },
+
+Assert.equal "Call extract on a Pattern"
+    (Pattern.capture { $entity $attribute 5} { `hello` `world` 5 })
+    { entity = `hello`, attribute = `world` },
