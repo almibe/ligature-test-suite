@@ -68,30 +68,26 @@ Assert.equal "Call extract on multiple full basic match without Extraction"
     (Pattern.extract {$ $ $} { `a` `b` [`c`, 123]})
     [{}, {}],
 
--- Assert.equal "Call extract on partial match without Extraction"
---     (Pattern.extract {$ `b` `c`} { `a` `b` [`c`, 123]})
---     [{}],
+Assert.equal "Call extract on partial match without Extraction"
+    (Pattern.extract {$ `b` `c`} { `a` `b` [`c`, 123]})
+    [{}],
 
--- Assert.equal "Call extract on partial match without Extraction"
---     (Pattern.extract {`a` $ `c`} { `a` `b` [`c`, 123]})
---     [{}],
+Assert.equal "Call extract on partial match without Extraction"
+    (Pattern.extract {`a` $ `c`} { `a` `b` [`c`, 123]})
+    [{}],
 
--- Assert.equal "Call extract on partial basic match without Extraction on Value"
---     (Pattern.extract {`a` `b` $} { `a` `b` [`c`, 123]})
---     [{}, {}],
+Assert.equal "Call extract on partial basic match without Extraction on Value"
+    (Pattern.extract {`a` `b` $} { `a` `b` [`c`, 123]})
+    [{}, {}],
 
--- Assert.equal "Call extract on basic match with Extraction"
---     (Pattern.extract {$a `b` `c`} { `a` `b` `c`})
---     [{a = `a`}],
+Assert.equal "Call extract on basic match with Extraction"
+    (Pattern.extract {$a `b` `c`} { `a` `b` `c`})
+    [{a = `a`}],
 
--- Assert.equal "Call extract on a Pattern"
---     (Pattern.extract { $entity $attribute 5} { `hello` `world` 5 })
---     { entity = `hello`, attribute = `world` },
+Assert.equal "Call extract on a Pattern"
+    (Pattern.extract { $entity $attribute 5} { `hello` `world` 5 })
+    [{ entity = `hello`, attribute = `world` }],
 
--- Assert.equal "Call matches on a Pattern"
---     (Pattern.matches {} {})
---     true,
-
--- Assert.equal "Call query on a Pattern"
---     (Pattern.query {} {})
---     {},
+Assert.equal "Call matches on a Pattern"
+    (Pattern.matches {} {})
+    true,
