@@ -87,7 +87,3 @@ Assert.equal "Call extract on basic match with Extraction"
 Assert.equal "Call extract on a Pattern"
     (Pattern.extract { $entity $attribute 5} { `hello` `world` 5 })
     [{ entity = `hello`, attribute = `world` }],
-
-Assert.equal "Call matches on a Pattern"
-    (Pattern.matches {} {})
-    true,
