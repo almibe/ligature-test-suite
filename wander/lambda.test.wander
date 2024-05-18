@@ -1,7 +1,13 @@
 id = \i -> i,
-
-Assert.equal "Test basic definitions." (\i -> i) id,
+Assert.equal "Test basic definition." (id "hello") "hello",
 Assert.equal "Define simple lambda and call it" (id = \x -> x, id "hello") "hello",
+id i = i,
+Assert.equal "Test short definition." (id "hello") "hello",
+pair x y = [x, y],
+Assert.equal "Test short definition with two params." (pair "hello" "world") ["hello", "world"],
+ns = { pair x y = [x, y], id = \i -> i },
+Assert.equal "Test calling Namespace function def." (ns.pair "hello" "world" | ns.id) ["hello", "world"],
+
     -- {
     --     name = "Partial application of Host Function",
     --     test = (inc = Int.add 1, inc 4),

@@ -1,4 +1,4 @@
-instance = Keylime.new [],
+instance = Keylime.open "hello",
 Assert.equal "New instance should be empty" (instance.all {}) [],
 instance = instance.add 0xFF 0xEE,
 Assert.equal "New instance should have single pair" (instance.all {}) [[0xFF, 0xEE]],

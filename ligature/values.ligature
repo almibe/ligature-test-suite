@@ -1,0 +1,6 @@
+{
+    `string` `=` "hello",
+    `int` `=` 123,
+    `identifier` `=` `id`,
+    `bytes` `=` 0x1234,
+}
