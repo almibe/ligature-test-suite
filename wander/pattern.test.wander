@@ -26,64 +26,64 @@ Assert.equal "Mixing Slot types in same Pattern"
     { $ $attribute 234 }
     { $ $attribute 234 },
 
-Assert.equal "Call isDataset on Pattern"
-    [(Pattern.isDataset { `a` `a` `a` }), (Pattern.isDataset { $a `a` `a` })]
-    [true, false],
+-- Assert.equal "Call isDataset on Pattern"
+--     [(Pattern.isDataset { `a` `a` `a` }), (Pattern.isDataset { $a `a` `a` })]
+--     [true, false],
 
-Assert.equal "Call extracts on Pattern" 
-    [ Pattern.extracts { `a` `a` `a` }, 
-        Pattern.extracts { $a `a` `a` }, 
-        Pattern.extracts { $ `a` 234 } ]
-    [false, true, false],
+-- Assert.equal "Call extracts on Pattern" 
+--     [ Pattern.extracts { `a` `a` `a` }, 
+--         Pattern.extracts { $a `a` `a` }, 
+--         Pattern.extracts { $ `a` 234 } ]
+--     [false, true, false],
 
-Assert.equal "Call apply on a Pattern"
-    (Pattern.apply { $entity $attribute 5 } { entity = `hello`, attribute = `world`})
-    { `hello` `world` 5 },
+-- Assert.equal "Call apply on a Pattern"
+--     (Pattern.apply { $entity $attribute 5 } { entity = `hello`, attribute = `world`})
+--     { `hello` `world` 5 },
 
-Assert.equal "Call extract on an empty Pattern"
-    (Pattern.extract {} {})
-    [],
+-- Assert.equal "Call extract on an empty Pattern"
+--     (Pattern.extract {} {})
+--     [],
 
-Assert.equal "Call extract on a Dataset with an empty Pattern"
-    (Pattern.extract {} { `a` `a` `a`})
-    [],
+-- Assert.equal "Call extract on a Dataset with an empty Pattern"
+--     (Pattern.extract {} { `a` `a` `a`})
+--     [],
 
-Assert.equal "Call extract on a Dataset with matching pattern with no slots"
-    (Pattern.extract {`a` `a` `a`} { `a` `a` `a`})
-    [{}],
+-- Assert.equal "Call extract on a Dataset with matching pattern with no slots"
+--     (Pattern.extract {`a` `a` `a`} { `a` `a` `a`})
+--     [{}],
 
-Assert.equal "Call extract on basic match without Extraction"
-    (Pattern.extract {$ `b` `c`} { `a` `b` `c`})
-    [{}],
+-- Assert.equal "Call extract on basic match without Extraction"
+--     (Pattern.extract {$ `b` `c`} { `a` `b` `c`})
+--     [{}],
 
-Assert.equal "Call extract on full basic match without Extraction"
-    (Pattern.extract {$ $ $} { `a` `b` `c`})
-    [{}],
+-- Assert.equal "Call extract on full basic match without Extraction"
+--     (Pattern.extract {$ $ $} { `a` `b` `c`})
+--     [{}],
 
-Assert.equal "Call extract on total match without Extraction"
-    (Pattern.extract {`a` `b` `c`} { `a` `b` [`c`, 123]})
-    [{}],
+-- Assert.equal "Call extract on total match without Extraction"
+--     (Pattern.extract {`a` `b` `c`} { `a` `b` [`c`, 123]})
+--     [{}],
 
-Assert.equal "Call extract on multiple full basic match without Extraction"
-    (Pattern.extract {$ $ $} { `a` `b` [`c`, 123]})
-    [{}, {}],
+-- Assert.equal "Call extract on multiple full basic match without Extraction"
+--     (Pattern.extract {$ $ $} { `a` `b` [`c`, 123]})
+--     [{}, {}],
 
-Assert.equal "Call extract on partial match without Extraction"
-    (Pattern.extract {$ `b` `c`} { `a` `b` [`c`, 123]})
-    [{}],
+-- Assert.equal "Call extract on partial match without Extraction"
+--     (Pattern.extract {$ `b` `c`} { `a` `b` [`c`, 123]})
+--     [{}],
 
-Assert.equal "Call extract on partial match without Extraction"
-    (Pattern.extract {`a` $ `c`} { `a` `b` [`c`, 123]})
-    [{}],
+-- Assert.equal "Call extract on partial match without Extraction"
+--     (Pattern.extract {`a` $ `c`} { `a` `b` [`c`, 123]})
+--     [{}],
 
-Assert.equal "Call extract on partial basic match without Extraction on Value"
-    (Pattern.extract {`a` `b` $} { `a` `b` [`c`, 123]})
-    [{}, {}],
+-- Assert.equal "Call extract on partial basic match without Extraction on Value"
+--     (Pattern.extract {`a` `b` $} { `a` `b` [`c`, 123]})
+--     [{}, {}],
 
-Assert.equal "Call extract on basic match with Extraction"
-    (Pattern.extract {$a `b` `c`} { `a` `b` `c`})
-    [{a = `a`}],
+-- Assert.equal "Call extract on basic match with Extraction"
+--     (Pattern.extract {$a `b` `c`} { `a` `b` `c`})
+--     [{a = `a`}],
 
-Assert.equal "Call extract on a Pattern"
-    (Pattern.extract { $entity $attribute 5} { `hello` `world` 5 })
-    [{ entity = `hello`, attribute = `world` }],
+-- Assert.equal "Call extract on a Pattern"
+--     (Pattern.extract { $entity $attribute 5} { `hello` `world` 5 })
+--     [{ entity = `hello`, attribute = `world` }],

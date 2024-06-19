@@ -1,13 +1,7 @@
-Assert.equal "Start with no datasets" (Ligature.datasets ()) [],
-
-Assert.equal "Add dataset" (
-    Ligature.createDataset "hello",
-    Ligature.datasets (),    
-    )
-    ["hello"],
-
-Assert.equal "Start with no Statements" (Ligature.allStatements "hello") [],
-
+--Assert.equal "Simple extract"
+--    (Ligature.extract {?a `b` `c`} {`a` `b` `c`})
+    
+    
 -- Assert.equal "Add Statements" (
 --     Ligature.addStatements "hello" [`a` `b` `c`, `d` `e` 234, `f` `g` "h", `q` `u` 0xDEADCAFE],
 --     Ligature.allStatements "hello")

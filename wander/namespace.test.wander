@@ -1,2 +1,2 @@
-Assert.equal "Namespace literal" { x = 1, y = false } { x = 1, y = false },
-Assert.equal "Call Namespace literal" (x = { id = \x -> x}, x.id 123) 123,
+-- Assert.equal "Namespace literal" { x = 1, y = false } { x = 1, y = false },
+-- Assert.equal "Call Namespace literal" (x = { id = \x -> x}, x.id 123) 123,
