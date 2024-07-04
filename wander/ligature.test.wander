@@ -1,7 +1,31 @@
---Assert.equal "Simple extract"
---    (Ligature.extract {?a `b` `c`} {`a` `b` `c`})
-    
-    
+assertEqual "Count empty Network" (count {}) 0,
+
+assertEqual "Empty educe" 
+    (educe {} {}) 
+    [],
+
+assertEqual "Simple educe"
+    (educe {`a` `b` `c`} {$a `b` `c`})
+    [[a = `a`]],
+
+assertEqual "Simple educe"
+    (educe {`a` `b` `c`} {$a `b` $value})
+    [[a = `a`, value = `c`]],
+
+assertEqual "Simple educe"
+    (educe {`a` `b` `c`, `e` `b` `e`} {$a `b` $a})
+    [[a = `e`]],
+
+assertEqual "Simple educe"
+    (educe {`a` `b` `c`} {$a `b` 4})
+    [],
+
+assertEqual "Simple educe"
+    (educe {`a` `b` `c`, `e` `b` `e`} {$a `b` $a})
+    [[a = `e`]],
+
+
+
 -- Assert.equal "Add Statements" (
 --     Ligature.addStatements "hello" [`a` `b` `c`, `d` `e` 234, `f` `g` "h", `q` `u` 0xDEADCAFE],
 --     Ligature.allStatements "hello")
