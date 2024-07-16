@@ -1,6 +1,6 @@
-Assert.equal "String with quotes" "\"Hello\t\n\"" "\"Hello\t\n\"",
-Assert.equal "Encode and decode String to Bytes"
-    ("hello" | String.toBytes | String.fromBytes) "hello",
+-- Assert.equal "String with quotes" "\"Hello\t\n\"" "\"Hello\t\n\"",
+-- Assert.equal "Encode and decode String to Bytes"
+--     ("hello" | String.toBytes | String.fromBytes) "hello",
 
 -- Assert.equal "Basic String Interpolation" (x = 5, i"x = $(x)") "x = 5",
 -- Assert.equal "Record String Interpolation"

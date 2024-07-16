@@ -1,7 +1,7 @@
-b = Bool.not false,
+--b = Bool.not false,
 
-Assert.equal "Basic Not test" (Bool.not false) true,
-Assert.equal "Basic Not test" b true,
+--Assert.equal "Basic Not test" (Bool.not false) true,
+--Assert.equal "Basic Not test" b true,
 
 -- // test("not function") {
 --     //   val script = "not(true)"

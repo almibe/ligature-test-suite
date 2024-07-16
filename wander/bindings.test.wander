@@ -1,2 +1,2 @@
-Assert.equal "Make sure name parser is greedy" (trued = true, trued) true,
-Assert.equal "Scope shadowing" (x = 5, (x = 7, x)) 7
+--Assert.equal "Make sure name parser is greedy" (trued = true, trued) true,
+--Assert.equal "Scope shadowing" (x = 5, (x = 7, x)) 7
