@@ -1,6 +1,0 @@
--- id = `a`,
--- Assert.equal "Read Identifier's value" (Identifier.value id) "a",
-
--- prefix = `hello://`,
-
--- Assert.equal "Identifier concat operator" (prefix:`test`) (`hello://test`)

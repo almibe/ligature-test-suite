@@ -1,9 +1,0 @@
--- Assert.equal "Start with no datasets" (Ligature.datasets ()) [],
-
--- Assert.equal "Add dataset" (
---     Ligature.createDataset "hello",
---     Ligature.datasets (),    
---     )
---     ["hello"],
-
--- Assert.equal "Start with no Statements" (Ligature.allStatements "hello") [],
