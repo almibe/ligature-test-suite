@@ -1,4 +1,2 @@
-@a {a b c}
-@b {a b c}
-@ { given = @a, expect = @b }
+{ given = {a b c}, expect = {a b c} }
 assert-equal
