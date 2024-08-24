@@ -1,9 +1,9 @@
-( assert-equal given = {a b c}, expect = {a b c} )
+{ given = {a b c}, expect = {a b c} } assert-equal
 
 { a = {a b c}, b = {a b c} }
 
-( assert-equal given = a, expect = b )
+{given = a, expect = b} assert-equal
 
-( assert-equal given = {a b c}, expect = b )
+{ given = {a b c}, expect = b } assert-equal
 
-( assert-equal given = a, expect = {a b c} )
+{ given = a, expect = {a b c} } assert-equal
