@@ -1,7 +1,1 @@
-@i {a b c}
-@p {$a b c}
-@ { in = @i, pattern = @p, out = @o }
-match
-@result { results = [{ $a = a }] }
-@ { given = @o, expect = @result }
-assert-equal
+[ assert-equal [ match { $a $b $c } { a c b } ] [ { $a = a, $b = b, $c = c } ] ]
