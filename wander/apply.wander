@@ -1,7 +1,1 @@
-@template { $a = $b }
-@input { values = [ { $a = a, $b = b } {$a = c, $b = d} ] }
-@ { template = @template, input = @input.values, out = @out }
-apply
-@expected = { a = b, c = d }
-@ { given = @out expect = @expected }
-assert-equal
+(assert-equal (apply {$a b c} [{$a = b}]) [{b b c }] )

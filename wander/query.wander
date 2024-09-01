@@ -1,8 +1,1 @@
-@i {a b c}
-@p {$a b c}
-@t {res = $a}
-@ { in = @i, pattern = @p, template = @t, out = @o }
-query
-@result { res = a }
-@ { given = @o, expect = @result }
-assert-equal
+(assert-equal (query {$a b c} {res = $a} {a b c}) [{res = a}])

@@ -1,1 +1,1 @@
-( ignore [ assert-equal {} {a b c} ] )
+( ignore ( assert-equal {} {a b c} ) )
