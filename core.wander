@@ -1,9 +1,7 @@
-(set @test {a b c})
-(assert-equal (read @test) {a b c})
+(set test {a b c})
+(assert-equal (read test) {a b c})
 
-@docs
-(chomp (docs))
-(assert-equal (read @docs) (docs))
-
+(set docs (docs))
+(assert-equal (read docs) (docs))
 
 (assert-equal (id [a]) [a])
