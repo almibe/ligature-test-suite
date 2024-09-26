@@ -1,0 +1,11 @@
+pass {
+    betty : Cat,
+}
+
+fail {
+    betty : Cat,
+    betty :¬ Cat
+}
+
+(assert-equal (is-consistent pass) true) 
+(assert-equal (is-consistent fail) false) 
