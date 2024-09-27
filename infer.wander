@@ -1,0 +1,6 @@
+(assert-equal
+    (infer
+        (⊑ Cat Animal) 
+        { betty : Cat })
+    { betty : Cat, betty : Animal }  
+)
