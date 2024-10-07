@@ -1,1 +1,1 @@
-(assert-equal (apply {$a b c} [{$a = b}]) [{b b c }] )
+(assert-equal (apply {$a b c} {$a = b}) {b b c } )
