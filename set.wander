@@ -1,0 +1,2 @@
+set test {a b c},
+assert-equal (read test) {a b c},

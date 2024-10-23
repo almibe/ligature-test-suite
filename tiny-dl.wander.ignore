@@ -1,0 +1,3 @@
+(assert-equal {A subconcept B} (subconcept A B))
+
+(assert-equal {A subconcept B} (tiny-dl.parse "A ⊑ B"))
