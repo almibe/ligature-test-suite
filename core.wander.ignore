@@ -1,9 +1,0 @@
-(set test {a b c})
-(assert-equal (read test) {a b c})
-
-(set docs (docs))
-(assert-equal (read docs) (docs))
-
-(assert-equal (id [a]) [a])
-
-(assert-equal {a b c} {"a" "b" "c"})

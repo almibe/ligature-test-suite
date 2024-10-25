@@ -1,0 +1,3 @@
+ignore (assert-equal {} {a b c}),
+ignore (let test {a b c}),
+assert-equal (read test) {}
