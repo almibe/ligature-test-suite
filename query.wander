@@ -1,0 +1,1 @@
+assert-equal (query {$a b c} {res = $a} {a b c}) {res = a}
