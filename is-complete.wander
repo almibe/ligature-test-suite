@@ -1,0 +1,11 @@
+let complete { 
+    a : A
+},
+
+let incomplete {
+    a : A,
+    a b c
+},
+
+assert-equal (is-complete? complete) true,
+assert-equal (is-complete? incomplete) false
