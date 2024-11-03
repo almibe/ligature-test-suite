@@ -1,1 +1,5 @@
-assert-equal (query {$a b c} {res = $a} {a b c}) {res = a}
+assert-equal (query {? ? ?} {e f g} {a b c}) {},
+
+assert-equal (query {?a ?b ?c} {e f g} {a b c}) {e f g},
+
+assert-equal (query {?a b c} {result = ?a} {q b c, a c c}) {result = q}
