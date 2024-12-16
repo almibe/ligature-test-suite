@@ -1,0 +1,9 @@
+assert-equal (match (? ? ?) {}) (result-set),
+
+assert-equal (match (? ? ?) {a b c}) (result-set ()),
+
+assert-equal (match (?a ?a ?a) {a b c}) (result-set),
+
+assert-equal (match (?a ?a ?a) {b b b}) (result-set (?a b)),
+
+assert-equal (match (?a ?a ?a) {b b b, c c c}) (result-set (?a b) (?a c)),
