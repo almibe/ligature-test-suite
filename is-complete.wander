@@ -1,11 +1,6 @@
-let complete { 
-    a : A
-},
+?complete = { a : A },
 
-let incomplete {
-    a : A,
-    a b c
-},
+?incomplete = { a : A, a b c},
 
-assert-equal (is-complete? complete) true,
-assert-equal (is-complete? incomplete) false
+assert-equal (is-complete ?complete) true,
+assert-equal (is-complete ?incomplete) false
