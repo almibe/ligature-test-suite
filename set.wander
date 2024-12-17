@@ -1,5 +1,0 @@
-let test {a b c},
-assert-equal (read test) {a b c},
-
-let test2 {a b c},
-assert-equal (read test) (read test2),

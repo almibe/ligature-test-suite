@@ -1,5 +1,5 @@
 assert-equal
     (infer
-        { Cat subconcept Animal } 
+        { Cat subconcept-of Animal } 
         { betty : Cat })
     { betty : Cat, betty : Animal }

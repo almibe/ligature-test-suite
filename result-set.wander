@@ -1,0 +1,4 @@
+assert-equal (result-set) (result-set),
+assert-equal (result-set ()) (result-set ()),
+assert-equal (result-set (?a a ?b "b")) (result-set (?b "b" ?a a)),
+assert-equal (result-set (?a a ?b "b") (?a g)) (result-set (?a g) (?b "b" ?a a)),
