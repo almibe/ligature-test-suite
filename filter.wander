@@ -1,0 +1,3 @@
+assert-equal (filter {} {a b c}) {},
+assert-equal (filter {?a b d} {a b c}) {},
+assert-equal (filter {?a b c} {a b c}) {a b c},
