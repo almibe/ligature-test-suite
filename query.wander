@@ -1,3 +1,6 @@
+import assert,
+import network,
+
 assert-equal (query {? ? ?} {e f g} {a b c}) {e f g},
 
 assert-equal (query {?a ?b ?c} {e f g} {a b c}) {e f g},

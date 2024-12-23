@@ -1,3 +1,6 @@
+import assert,
+import network,
+
 assert-equal (apply {} (result-set)) {},
 
 assert-equal (apply {a b c} (result-set)) {},

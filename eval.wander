@@ -1,1 +1,4 @@
+import assert,
+import core,
+
 assert-equal (eval (id test)) test,

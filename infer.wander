@@ -1,3 +1,6 @@
+import assert,
+import tinydl,
+
 assert-equal
     (infer
         { Cat subconcept-of Animal } 

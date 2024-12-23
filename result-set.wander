@@ -1,3 +1,6 @@
+import assert,
+import core,
+
 assert-equal (result-set) (result-set),
 assert-equal (result-set ()) (result-set ()),
 assert-equal (result-set (?a a ?b "b")) (result-set (?b "b" ?a a)),

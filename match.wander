@@ -1,3 +1,7 @@
+import assert,
+import network,
+import core,
+
 assert-equal (match (? ? ?) {}) (result-set),
 
 assert-equal (match (? ? ?) {a b c}) (result-set ()),

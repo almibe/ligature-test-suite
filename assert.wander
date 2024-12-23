@@ -1,1 +1,3 @@
+import assert,
+
 assert-equal {a b c} {a b c}

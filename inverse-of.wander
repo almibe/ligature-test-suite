@@ -1,3 +1,6 @@
+import assert,
+import tinydl,
+
 assert-equal
     (infer
         { member-of tdl.inverse-of contains } 

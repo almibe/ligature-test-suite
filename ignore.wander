@@ -1,1 +1,4 @@
+import assert,
+import core,
+
 ignore (assert-equal {} {a b c}),
