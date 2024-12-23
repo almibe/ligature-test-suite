@@ -6,3 +6,13 @@ assert-equal ?docs (docs),
 
 ?a = id a,
 assert-equal ?a a,
+
+?multi = { a b "one
+two
+three" },
+
+assert-equal ?multi {a  b "one\ntwo\nthree"},
+
+fn size ?n (count ?n),
+
+assert-equal (size {a b c}) (count {a b c}),

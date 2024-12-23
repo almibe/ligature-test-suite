@@ -1,0 +1,5 @@
+assert-equal (fold (id {}) {} (result-set)) {},
+
+assert-equal (fold (id {}) {a b c} (result-set)) {a b c},
+
+assert-equal (fold (id {d e f}) {a b c} (result-set ())) {a b c, d e f},
