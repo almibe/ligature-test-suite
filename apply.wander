@@ -1,4 +1,5 @@
 import assert,
+import core,
 import network,
 
 assert-equal (apply {} (result-set)) {},

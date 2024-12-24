@@ -1,4 +1,6 @@
 import assert,
+import core,
+import network,
 
 ?test = {a b c},
 assert-equal ?test {a b c},

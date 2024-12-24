@@ -1,2 +1,6 @@
+import assert,
+import core,
+import network,
+
 assert-equal (id {a b c} | count) 1,
 assert-equal (id {a b c} | union {d e f} | count) 2,
