@@ -1,0 +1,5 @@
+import assert,
+
+assert-equal a a,
+assert-equal {} {},
+assert-equal "a" "a",

@@ -1,0 +1,6 @@
+import network,
+import assert,
+
+set a {a b c},
+set b {a b c},
+assert-equal (read a) (read b),

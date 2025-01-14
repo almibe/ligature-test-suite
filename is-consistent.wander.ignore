@@ -1,0 +1,4 @@
+import assert,
+
+assert-equal (is-consistent {betty : Cat}) true,
+assert-equal (is-consistent {betty : Cat, betty :¬ Cat}) false,
