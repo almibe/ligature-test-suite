@@ -1,6 +1,8 @@
-import assert,
-import network,
+{action = count, arg = {}}
+{action = assert-equal, expected = 0}
 
-assert-equal (count {}) 0,
-assert-equal (count {a b c}) 1,
-assert-equal (count {a b c, e : E}) 2,
+{action = count, arg = {a b c}}
+{action = assert-equal, expected = 1}
+
+{action = count, arg = {a b c, e : E}}
+{action = assert-equal, expected = 2}

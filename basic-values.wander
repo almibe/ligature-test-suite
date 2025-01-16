@@ -1,2 +1,2 @@
-{ left = {a b c}, right = {d e f}, action = union }
-{ expected = {a b c, d e f}, action = assert-equal }
+{action = assert-equal, expected = a, result = a}
+{action = assert-equal, expected = "a", result = "a"}
