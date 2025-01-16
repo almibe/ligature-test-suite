@@ -1,5 +1,2 @@
-import assert,
-
-assert-equal a a,
-assert-equal {} {},
-assert-equal "a" "a",
+{ left = {a b c}, right = {d e f}, action = union }
+{ expected = {a b c, d e f}, action = assert-equal }

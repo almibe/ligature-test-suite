@@ -1,8 +1,5 @@
-import assert,
-import tinydl,
+{t-box = {}, a-box = {a b c}, action = infer}
+{expected = {a b c}, action = assert-equal}
 
-assert-equal
-    (infer
-        { Cat subconcept-of Animal } 
-        { betty : Cat })
-    { betty : Cat, betty : Animal }
+{t-box = {Cat subconcept-of Animal}, a-box = {betty : Cat}, action = infer}
+{expected = {betty : Cat, betty : Animal}, action = assert-equal}

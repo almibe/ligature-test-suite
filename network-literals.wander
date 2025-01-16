@@ -1,7 +1,5 @@
-import assert,
-
-assert-equal {a b c} {a b c},
-assert-equal {a b "c"} {a b "c"},
-assert-equal {a b (c)} {a b (c)},
-assert-equal {a b c, d e f} {a b c, d e f},
-assert-equal {a b "c", d e f} {a b "c", d e f},
+{action = assert-equal, expected = {a b c}, result = {a b c}}
+{action = assert-equal, expected = {a b "c"}, result = {a b "c"}}
+{action = assert-equal, expected = {a b (c)}, result = {a b (c)}}
+{action = assert-equal, expected = {a b c, d e f}, result = {a b c, d e f}}
+{action = assert-equal, expected = {a b "c", d e f}, result = {a b "c", d e f}}
