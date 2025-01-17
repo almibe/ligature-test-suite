@@ -1,0 +1,2 @@
+{ Ohio member-of Midwest } { member-of tdl.inverse-of contains } infer
+{ Ohio member-of Midwest, Midwest contains Ohio } assert-equal

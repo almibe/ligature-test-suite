@@ -1,8 +1,8 @@
-{} {a b c} filter 
+{a b c} {} filter 
 {} assert-equal
 
-{?a b d} {a b c} filter
+{a b c} {?a b d} filter
 {} assert-equal
 
-{?a b c} {a b c} filter
+{a b c} {?a b c} filter
 {a b c} assert-equal 

@@ -1,5 +1,5 @@
-{} {a b c} infer
+{a b c} {} infer
 {a b c} assert-equal
 
-{Cat subconcept-of Animal} {betty : Cat} infer
+{betty : Cat} {Cat subconcept-of Animal} infer
 {betty : Cat, betty : Animal} assert-equal

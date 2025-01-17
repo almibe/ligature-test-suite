@@ -1,0 +1,5 @@
+{betty : Cat} is-consistent
+"true" assert-equal
+
+{betty : Cat, betty :¬ Cat} is-consistent
+"false" assert-equal

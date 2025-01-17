@@ -1,0 +1,2 @@
+{ Bobby sibling Sally } { sibling : tdl.Is-Symmetrical } infer
+{ Bobby sibling Sally, Sally sibling Bobby } assert-equal
