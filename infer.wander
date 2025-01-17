@@ -1,5 +1,5 @@
-{t-box = {}, a-box = {a b c}, action = infer}
-{expected = {a b c}, action = assert-equal}
+{} {a b c} infer
+{a b c} assert-equal
 
-{t-box = {Cat subconcept-of Animal}, a-box = {betty : Cat}, action = infer}
-{expected = {betty : Cat, betty : Animal}, action = assert-equal}
+{Cat subconcept-of Animal} {betty : Cat} infer
+{betty : Cat, betty : Animal} assert-equal

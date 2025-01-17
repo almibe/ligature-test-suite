@@ -1,2 +1,2 @@
-{action = assert-equal, expected = a, result = a}
-{action = assert-equal, expected = "a", result = "a"}
+"a" "a" assert-equal
+{} {} assert-equal

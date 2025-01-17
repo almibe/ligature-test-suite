@@ -1,8 +1,8 @@
-{action = count, arg = {}}
-{action = assert-equal, expected = 0}
+{} count
+"0" assert-equal
 
-{action = count, arg = {a b c}}
-{action = assert-equal, expected = 1}
+{a b c} count
+"1" assert-equal
 
-{action = count, arg = {a b c, e : E}}
-{action = assert-equal, expected = 2}
+{a b c, e : E} count
+"2" assert-equal
