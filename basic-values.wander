@@ -1,2 +1,4 @@
 "a" "a" assert-equal
 {} {} assert-equal
+() () assert-equal
+*network *network assert-equal
