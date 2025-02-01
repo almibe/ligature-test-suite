@@ -12,3 +12,6 @@
 
 [object "key" "value"] to-json
 "{\"key\":\"value\"}" assert-equal
+
+[object "key" "value" "key2" "value2"] to-json
+"{\"key\":\"value\",\"key2\":\"value2\"}" assert-equal

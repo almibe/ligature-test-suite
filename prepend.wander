@@ -1,0 +1,8 @@
+[] ["test"] prepend
+["test"] assert-equal
+
+[[]] ["test" "test2"] prepend
+["test" "test2" []] assert-equal
+
+["test"] ["test2"] prepend
+["test2" "test"] assert-equal
