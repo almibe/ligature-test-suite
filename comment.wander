@@ -1,1 +1,4 @@
-(this is a comment)
+-- ignore
+{} count -- ignore
+-- also ignore
+"0" assert-equal
