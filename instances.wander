@@ -1,5 +1,8 @@
-{ betty : Cat, betty name "Betty", bob : Dog } [Cat] instances
-[{ betty : Cat, betty name "Betty" }] set assert-equal
+assert-equal
+    (set [{ betty : Cat, betty name "Betty" }])
+    (instances [Cat] { betty : Cat, betty name "Betty", bob : Dog }),
 
-{ betty : Cat, betty name "Betty", juni : Cat, bob : Dog } [Cat] instances
-[{ betty : Cat, betty name "Betty"} {juni : Cat }] set assert-equal
+assert-equal
+    (set [{ betty : Cat, betty name "Betty"} {juni : Cat }])
+    (instances [Cat] { betty : Cat, betty name "Betty", juni : Cat, bob : Dog })
+ 

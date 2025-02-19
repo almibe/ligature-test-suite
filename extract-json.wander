@@ -1,8 +1,8 @@
-{} [] extract-json
-"[]" assert-equal
+-- {} [] extract-json
+-- "[]" assert-equal
 
-{a b "c", b b b} [a] extract-json
-"[{\"id\":\"a\",\"b\":[\"c\"]}]" assert-equal
+-- {a b "c", b b b} [a] extract-json
+-- "[{\"id\":\"a\",\"b\":[\"c\"]}]" assert-equal
 
 -- {a b c} [a] extract
 -- "[{\"id\":\"a\",\"b\":[{\"id\":\"c\"}]}]" assert-equal

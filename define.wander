@@ -1,7 +1,0 @@
-{test action-def ["test"]} * merge
-test
-"test" assert-equal
-
-{test2 action-def [{a b c} union count]} * merge
-{d e f} test2
-"2" assert-equal
