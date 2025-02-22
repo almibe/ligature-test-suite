@@ -1,8 +1,8 @@
-{a b c} {?a ?b ?c} {e f g} query
-[{e f g}] assert-equal
+query {a b c} {?a ?b ?c} {e f g}
+| assert-equal [{e f g}],
 
-{a c c} {?a b c} {result = ?a}  query
-[] assert-equal
+query {a c c} {?a b c} {result = ?a}
+| assert-equal []
 
 {q b c} {?a b c} {result = ?a} query 
 [{result = q}] assert-equal 

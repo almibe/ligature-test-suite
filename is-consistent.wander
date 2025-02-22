@@ -4,4 +4,4 @@ assert-equal
 
 assert-equal
     false
-    (is-consistent {betty : Cat, betty :¬ Cat})
+    (is-consistent {betty : Cat, betty ~: Cat})
