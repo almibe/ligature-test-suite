@@ -1,7 +1,0 @@
-{a b c, d e f} *network merge
-*network read
-{a b c, d e f} assert-equal
-
-{d e f, d d d} *network remove
-*network read
-{a b c} assert-equal

@@ -1,0 +1,41 @@
+assert-equal
+  (kbs)
+  [],
+
+add-kb test,
+
+assert-equal
+  (kbs)
+  [test],
+
+add-kb test2,
+add-kb test3,
+remove-kb test2,
+
+assert-equal
+  (kbs)
+  [test test3],
+
+assert-kb test {a : A},
+
+define-kb test {A subconcept-of B},
+
+read-kb test
+| filter {?name : B}
+| assert-equal {a : B},
+
+read-assert-kb test
+| assert-equal {a : A},
+
+unassert-kb test {a : A},
+
+read-kb test
+| assert-equal {},
+
+read-define-kb test
+| assert-equal {A subconcept-of B},
+
+undefine-kb test {A subconcept-of B},
+
+read-define-kb test
+| assert-equal {},
