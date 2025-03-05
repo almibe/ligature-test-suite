@@ -1,2 +1,0 @@
-{ betty : Cat, bob : Dog } [Cat] instances-json
-"[{\"id\":\"betty\",\":\":[{\"id\":\"Cat\"}]}]" assert-equal

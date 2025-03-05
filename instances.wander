@@ -1,0 +1,15 @@
+-- assert-equal
+--     (set [{ betty : Cat, betty name "Betty" }])
+--     (instances [Cat] { betty : Cat, betty name "Betty", bob : Dog }),
+
+-- assert-equal
+--     (set [{ betty : Cat, betty name "Betty"} {juni : Cat }])
+--     (instances [Cat] { betty : Cat, betty name "Betty", juni : Cat, bob : Dog })
+ 
+
+-- instances Cat {} {betty : Cat}
+-- | assert-equal (set [{betty : Cat}]),
+
+-- instances Cat {} {betty : Cat, betty Cat.name Betty}
+-- | assert-equal (set [{betty : Cat}])
+

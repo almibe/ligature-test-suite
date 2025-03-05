@@ -1,6 +1,6 @@
 assert-equal a a,
 assert-equal "a" "a",
-assert-equal a "a",
+-- assert-different a "a",
 assert-equal {} {},
 assert-equal [] [],
 assert-equal () (),

@@ -1,8 +1,0 @@
-assert-equal
-    (set [{ betty : Cat, betty name "Betty" }])
-    (instances [Cat] { betty : Cat, betty name "Betty", bob : Dog }),
-
-assert-equal
-    (set [{ betty : Cat, betty name "Betty"} {juni : Cat }])
-    (instances [Cat] { betty : Cat, betty name "Betty", juni : Cat, bob : Dog })
- 

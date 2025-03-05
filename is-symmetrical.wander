@@ -1,3 +1,3 @@
 assert-equal
     { Bobby sibling Sally, Sally sibling Bobby }
-    (infer { sibling : tdl.Is-Symmetrical } { Bobby sibling Sally })
+    (infer { sibling : tiny-dl.Is-Symmetrical } { Bobby sibling Sally })
