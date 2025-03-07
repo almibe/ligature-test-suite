@@ -1,0 +1,11 @@
+bend.json.instances 
+  (network [cat-encoding : bend.json.Encoding]
+    [cat-encoding bend.target-concept Cat]
+    [cat-encoding bend.json.property name-property]
+    [name-property bend.target-role name]
+    [name-property bend.json.type bend.json.String]
+    [name-property bend.json.property-name "name"])
+  cat-encoding
+  (network [betty : Cat] [betty name "Betty"])
+| assert-equal
+  "[{\"name\":\"Betty\"}]"
