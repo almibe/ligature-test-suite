@@ -1,5 +1,5 @@
-assert-equal {a b c} (infer {} {a b c}), 
+assert-equal (network [a b c]) (infer (network) (network [a b c])),
 
 assert-equal
-    {betty : Cat, betty : Animal}
-    (infer {Cat subconcept-of Animal} {betty : Cat})
+    (network [betty : Cat] [betty : Animal])
+    (infer (network [Cat subconcept-of Animal]) (network [betty : Cat]))

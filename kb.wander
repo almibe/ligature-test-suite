@@ -16,26 +16,26 @@ assert-equal
   (kbs)
   [test test3],
 
-assert-kb test {a : A},
+assert-kb test (network [a : A]),
 
-define-kb test {A subconcept-of B},
+define-kb test (network [A subconcept-of B]),
 
 read-kb test
-| filter {?name : B}
-| assert-equal {a : B},
+| filter (pattern [?name : B])
+| assert-equal (network [a : B]),
 
 read-assert-kb test
-| assert-equal {a : A},
+| assert-equal (network [a : A]),
 
-unassert-kb test {a : A},
+unassert-kb test (network [a : A]),
 
 read-kb test
-| assert-equal {},
+| assert-equal (network),
 
 read-define-kb test
-| assert-equal {A subconcept-of B},
+| assert-equal (network [A subconcept-of B]),
 
-undefine-kb test {A subconcept-of B},
+undefine-kb test (network [A subconcept-of B]),
 
 read-define-kb test
-| assert-equal {},
+| assert-equal (network),

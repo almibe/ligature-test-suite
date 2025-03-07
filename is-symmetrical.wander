@@ -1,3 +1,3 @@
 assert-equal
-    { Bobby sibling Sally, Sally sibling Bobby }
-    (infer { sibling : tiny-dl.Is-Symmetrical } { Bobby sibling Sally })
+    (network [Bobby sibling Sally] [Sally sibling Bobby])
+    (infer (network [sibling : tiny-dl.Is-Symmetrical]) (network [Bobby sibling Sally]))
