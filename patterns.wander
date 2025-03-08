@@ -1,0 +1,31 @@
+assert-equal
+  (pattern [?a b c])
+  (pattern 
+    { @id ?a
+      b c }),
+
+assert-equal
+  (pattern [?a b c] [?a e ?f])
+  (pattern 
+    { @id ?a
+      b c
+      e ?f }),
+    
+assert-equal
+  (pattern [?a : A])
+  (pattern 
+    { @id ?a
+      : A }),
+
+assert-equal
+  (pattern [a : A] [a : B])
+  (pattern 
+    { @id a
+      : [A B] }),
+
+assert-equal
+  (pattern [a b ?c] [?c d e])
+  (pattern 
+    { @id a
+      b { @id ?c 
+          d e } }),
