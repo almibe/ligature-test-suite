@@ -1,3 +1,3 @@
-assert-equal 0 (count (network)),
-assert-equal 1 (count (network [a b c])),
-assert-equal 2 (count (network [a b c] [e : E]))
+assert-equal "0" (count (network)),
+assert-equal "1" (count (network [a b c])),
+assert-equal "2" (count (network [a b c] [e : E]))
