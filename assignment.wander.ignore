@@ -1,0 +1,15 @@
+let x = (network [a b c]),
+
+assert-equal
+    (network [a b c])
+    (x),
+
+-- let y = (network [a b c]),
+
+-- assert-equal (y) (x),
+
+-- let z s = s,
+
+-- assert-equal
+--     (z [])
+--     [],

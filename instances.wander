@@ -1,6 +1,6 @@
-assert-equal
+(assert-equal
     (set [{ @ betty : Cat name "Betty" }])
-    (instances Cat (network [betty : Cat] [betty name "Betty"] [bob : Dog])),
+    (instances Cat (network [betty : Cat] [betty name "Betty"] [bob : Dog])))
 
 -- assert-equal
 --     (set [{ betty : Cat, betty name "Betty"} {juni : Cat }])

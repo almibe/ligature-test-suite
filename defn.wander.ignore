@@ -1,0 +1,8 @@
+(defn const [] a)
+
+(assert-equal (const) (const))
+
+
+-- defn middle [$a $b $c] $b,
+
+-- assert-equal (middle d e f) e,

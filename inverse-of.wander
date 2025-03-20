@@ -1,3 +1,3 @@
-assert-equal
+(assert-equal
     (network [Ohio member-of Midwest] [Midwest contains Ohio])
-    (infer (network [member-of tiny-dl.inverse-of contains]) (network [Ohio member-of Midwest]))
+    (infer (network [member-of tiny-dl.inverse-of contains]) (network [Ohio member-of Midwest])))

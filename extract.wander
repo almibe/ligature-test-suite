@@ -1,6 +1,6 @@
-assert-equal
+(assert-equal
     { @ betty : Cat }
-    (extract betty (network [betty : Cat])),
+    (extract betty (network [betty : Cat])))
 
 -- assert-equal
 --     { @ betty : Cat name "Betty" }

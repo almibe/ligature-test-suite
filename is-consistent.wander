@@ -1,7 +1,7 @@
-assert-equal
+(assert-equal
     true 
-    (is-consistent (network [betty : Cat])),
+    (is-consistent (network [betty : Cat])))
 
-assert-equal
+(assert-equal
     false
-    (is-consistent (network [betty : Cat] [betty ~: Cat]))
+    (is-consistent (network [betty : Cat] [betty ~: Cat])))

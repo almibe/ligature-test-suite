@@ -1,5 +1,5 @@
-assert-equal (network [a b c]) (infer (network) (network [a b c])),
+(assert-equal (network [a b c]) (infer (network) (network [a b c])))
 
-assert-equal
+(assert-equal
     (network [betty : Cat] [betty : Animal])
-    (infer (network [Cat subconcept-of Animal]) (network [betty : Cat]))
+    (infer (network [Cat subconcept-of Animal]) (network [betty : Cat])))

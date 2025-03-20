@@ -1,31 +1,31 @@
-assert-equal
+(assert-equal
   (pattern [?a b c])
   (pattern 
     { @ ?a
-      b c }),
+      b c }))
 
-assert-equal
+(assert-equal
   (pattern [?a b c] [?a e ?f])
   (pattern 
     { @ ?a
       b c
-      e ?f }),
+      e ?f }))
     
-assert-equal
+(assert-equal
   (pattern [?a : A])
   (pattern 
     { @ ?a
-      : A }),
+      : A }))
 
-assert-equal
+(assert-equal
   (pattern [a : A] [a : B])
   (pattern 
     { @ a
-      : [A B] }),
+      : [A B] }))
 
-assert-equal
+(assert-equal
   (pattern [a b ?c] [?c d e])
   (pattern 
     { @ a
       b { @ ?c 
-          d e } }),
+          d e } }))

@@ -1,0 +1,36 @@
+assert-equal
+    (network
+        [betty : Named]
+        [betty name "Betty"])
+    (infer 
+        (network 
+            {@ Named
+            tiny-dl.≡ 
+                {@ __1
+                : tiny-dl.∃
+                tiny-dl.role name
+                tiny-dl.filler tiny-dl.Literal}})
+        (network 
+            [betty name "Betty"])),
+
+-- assert-equal
+--     (network
+--         [betty : Cat]
+--         [betty address "100 Fake Street"] 
+--         [betty : HouseCat])
+--     (infer 
+--         (network 
+--             {@ HouseCat
+--             tiny-dl.≡ 
+--                 {@ __1
+--                 : tiny-dl.⊓
+--                 tiny-dl.left Cat
+--                 tiny-dl.right 
+--                     {@ __2
+--                     : tiny-dl.∃
+--                     tiny-dl.role address
+--                     tiny-dl.filler tiny-dl.Literal
+--                     }}})
+--         (network 
+--             [betty : Cat]
+--             [betty address "100 Fake Street"])),

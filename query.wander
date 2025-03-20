@@ -1,0 +1,21 @@
+(assert-equal
+    (query (pattern) (pattern) (network))
+    (set []))
+
+-- query (pattern [?a ?b ?c]) (pattern [e f g]) (network [a b c])
+-- | assert-equal (set [(network [e f g])]),
+
+-- query {a c c} {?a b c} {result = ?a}
+-- | assert-equal []
+
+-- {q b c} {?a b c} {result = ?a} query 
+-- [{result = q}] assert-equal 
+
+-- {a b c} {?a ?b ?c} {?c ?a ?b} query
+-- [{c a b}] assert-equal 
+
+-- {q b c, a c c} {?a b c} {result = ?a} query
+-- [{result = q}] assert-equal 
+
+-- {a b c} {?a ?b ?c} [?a ?b ?c] query
+-- [[a b c]] assert-equal

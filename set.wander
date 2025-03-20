@@ -1,2 +1,2 @@
-assert-equal (set []) (set []),
-assert-equal (set [a a b]) (set [b a]),
+(assert-equal (set []) (set []))
+(assert-equal (set [a a b]) (set [b a]))
