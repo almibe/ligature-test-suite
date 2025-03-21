@@ -1,3 +1,4 @@
--- network [a b c]
--- | count
--- | assert-equal "1"
+(->
+   (network [a b c])
+   (count)
+   (assert-equal "1"))
