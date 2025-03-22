@@ -9,3 +9,13 @@
 (defn middle [$a $b $c] $b)
 
 (assert-equal (middle d e f) e)
+
+(defn id-twice [$fnName] (id $fnName) (id $fnName))
+
+(assert-equal (id-twice test) test)
+
+(defn local-val []
+    (let $x 5)
+    $x)
+
+(assert-equal (local-val) 5)
