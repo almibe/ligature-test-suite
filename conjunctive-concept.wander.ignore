@@ -1,4 +1,4 @@
-assert-equal
+(assert-equal
     (network
         [betty : Plant]
         [betty : Carnivore]
@@ -13,4 +13,4 @@ assert-equal
                 tiny-dl.conjunct Carnivore}})
         (network 
             [betty : Plant]
-            [betty : Carnivore])),
+            [betty : Carnivore])))

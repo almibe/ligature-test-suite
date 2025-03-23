@@ -1,0 +1,41 @@
+(assert-equal
+  (stores)
+  [])
+
+(add-store test)
+
+(assert-equal
+  (stores)
+  [test])
+
+(add-store test2)
+(add-store test3)
+(remove-store test2)
+
+(assert-equal
+  (stores)
+  [test test3])
+
+(assert-store test (network [a : A]))
+
+(define-store test (network [A subconcept-of B]))
+
+-- read-store test
+-- | filter (pattern [?name : B])
+-- | assert-equal (network [a : B]),
+
+-- read-assert-store test
+-- | assert-equal (network [a : A]),
+
+-- unassert-store test (network [a : A]),
+
+-- read-store test
+-- | assert-equal (network),
+
+-- read-define-store test
+-- | assert-equal (network [A subconcept-of B]),
+
+-- undefine-store test (network [A subconcept-of B]),
+
+-- read-define-store test
+-- | assert-equal (network),
