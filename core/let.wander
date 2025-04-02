@@ -17,3 +17,9 @@
 (assert-equal 
     (wrap 55)
     [55])
+
+(defn wrap-twice [$a] [[$a]])
+
+(assert-equal 
+    (wrap-twice 55)
+    [[55]])
