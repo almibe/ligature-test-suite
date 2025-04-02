@@ -7,3 +7,13 @@
 (let $y (network [a b c]))
 
 (assert-equal $y $x)
+
+(let $x 5)
+
+(assert-equal [$x] [5])
+
+(defn wrap [$a] [$a])
+
+(assert-equal 
+    (wrap 55)
+    [55])
