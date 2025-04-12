@@ -1,0 +1,3 @@
+(assert-equal 
+    (define (subconcept A B)) 
+    (define (subconcept A B)))
