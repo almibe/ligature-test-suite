@@ -1,0 +1,10 @@
+(assert-equal
+    false
+    (is-consistent
+        (definitions 
+            (define-concept
+                Named 
+                (exists name)))
+        (network 
+            [bob name "Bob"] 
+            [bob ~: Named])))

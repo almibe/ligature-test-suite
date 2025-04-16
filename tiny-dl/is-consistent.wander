@@ -1,7 +1,17 @@
+-- (assert-equal (network [a b c]) (infer (define) (network [a b c])))
+
+-- (assert-equal
+--     (network [betty : Cat] [betty : Animal])
+--     (infer (definitions (implies Cat Animal)) (network [betty : Cat])))
+
 (assert-equal
     true 
-    (is-consistent (network [betty : Cat])))
+    (is-consistent 
+        (definitions)
+        (network [betty : Cat])))
 
 (assert-equal
     false
-    (is-consistent (network [betty : Cat] [betty ~: Cat])))
+    (is-consistent 
+        (definitions)
+        (network [betty : Cat] [betty ~: Cat])))

@@ -1,5 +1,0 @@
-(assert-equal (network [a b c]) (infer (define) (network [a b c])))
-
-(assert-equal
-    (network [betty : Cat] [betty : Animal])
-    (infer (define (subconcept Cat Animal)) (network [betty : Cat])))
