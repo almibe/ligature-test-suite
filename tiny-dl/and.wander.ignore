@@ -1,0 +1,11 @@
+(assert-equal
+    false
+    (is-consistent
+        (definitions 
+            (define-concept
+                CarnivorousPlant
+                (and Plant Carnivore)))
+        (network 
+            [betty : Plant]
+            [betty : Carnivore]
+            [betty ~: CarnivorousPlant])))

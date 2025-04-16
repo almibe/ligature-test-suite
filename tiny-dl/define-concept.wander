@@ -1,0 +1,8 @@
+(assert-equal
+    false
+    (is-consistent
+        (definitions 
+            (define-concept Dog Doggo))
+        (network 
+            [megan : Dog]
+            [megan ~: Doggo])))
