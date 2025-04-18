@@ -4,5 +4,5 @@
         (definitions 
             (define-concept Dog Doggo))
         (assertions 
-            [megan : Dog]
-            [megan ~: Doggo])))
+            (isa megan Dog)
+            (isa megan (not Doggo)))))

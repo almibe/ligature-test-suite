@@ -14,4 +14,4 @@
     false
     (is-consistent 
         (definitions)
-        (assertions [betty : Cat] [betty ~: Cat])))
+        (assertions [betty : Cat] [betty ~ Cat])))

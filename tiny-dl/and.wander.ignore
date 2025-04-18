@@ -8,4 +8,4 @@
         (assertions 
             [betty : Plant]
             [betty : Carnivore]
-            [betty ~: CarnivorousPlant])))
+            [betty ~ CarnivorousPlant])))

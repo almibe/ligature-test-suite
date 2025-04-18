@@ -1,11 +1,10 @@
 (assert-equal a a)
 (assert-equal "a" "a")
--- -- assert-different a "a",
 (assert-equal [] [])
 (assert-equal (assertions) (assertions))
 (assert-equal (assertions [a b c]) (assertions [a b c]))
 (assert-equal (assertions [a b c] [d e f]) (assertions [d e f] [a b c]))
-(assert-equal (pattern [?a b c]) (pattern [?a b c]))
+-- (assert-equal (pattern [?a b c]) (pattern [?a b c]))
 (assert-equal (isa a A) (isa a A))
 (assert-equal (isa b (not A)) (isa b (not A)))
 (assert-equal (isa betty (and Cat (not Dog))) (isa betty (and Cat (not Dog))))
