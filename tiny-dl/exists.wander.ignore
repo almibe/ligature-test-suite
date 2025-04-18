@@ -5,6 +5,6 @@
             (define-concept
                 Named 
                 (exists name)))
-        (network 
+        (assertions 
             [bob name "Bob"] 
             [bob ~: Named])))

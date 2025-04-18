@@ -5,7 +5,7 @@
             (define-concept
                 CarnivorousPlant
                 (and Plant Carnivore)))
-        (network 
+        (assertions 
             [betty : Plant]
             [betty : Carnivore]
             [betty ~: CarnivorousPlant])))

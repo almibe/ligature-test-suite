@@ -3,6 +3,6 @@
     (is-consistent
         (definitions 
             (define-concept Dog Doggo))
-        (network 
+        (assertions 
             [megan : Dog]
             [megan ~: Doggo])))

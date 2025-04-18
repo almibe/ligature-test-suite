@@ -1,31 +1,31 @@
 (assert-equal
-  (network [a b c])
-  (network 
+  (assertions [a b c])
+  (assertions 
     { @ a
       b c }))
 
 (assert-equal
-  (network [a b c] [a e f])
-  (network 
+  (assertions [a b c] [a e f])
+  (assertions 
     { @ a
       b c
       e f }))
   
 (assert-equal
-  (network [a : A])
-  (network 
+  (assertions [a : A])
+  (assertions 
     { @ a
       : A }))
 
 (assert-equal
-  (network [a : A] [a : B])
-  (network 
+  (assertions [a : A] [a : B])
+  (assertions 
     { @ a
       : [A B] }))
 
 (assert-equal
-  (network [a b c] [c d e])
-  (network 
+  (assertions [a b c] [c d e])
+  (assertions 
     { @ a
       b { @ c 
           d e } }))

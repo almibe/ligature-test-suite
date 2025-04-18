@@ -1,19 +1,19 @@
 (assert-equal
-    (query (pattern) (network))
+    (query (pattern) (assertions))
     (result-set []))
 
 (assert-equal
-    (query (pattern [?a ?b ?c]) (network [a b c]))
+    (query (pattern [?a ?b ?c]) (assertions [a b c]))
     (result-set [{?a a ?b b ?c c}]))
 
 (assert-equal
-    (query (pattern [?a b c]) (network [d b c]))
+    (query (pattern [?a b c]) (assertions [d b c]))
     (result-set [{?a d}]))
 
 (assert-equal
-    (query (pattern [?a d c]) (network [a b c]))
+    (query (pattern [?a d c]) (assertions [a b c]))
     (result-set []))
 
 (assert-equal
-    (query (pattern [?a b ?c]) (network [q b c] [a c c] [a b c]))
+    (query (pattern [?a b ?c]) (assertions [q b c] [a c c] [a b c]))
     (result-set [{?a q ?c c} {?a a ?c c}]))

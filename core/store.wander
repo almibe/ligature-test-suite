@@ -16,16 +16,16 @@
   (stores)
   [test test3])
 
-(assert-store test (network [a : A]))
+(assert-store test (assertions [a : A]))
 
 -- read-store test
 -- | filter (pattern [?name : B])
--- | assert-equal (network [a : B]),
+-- | assert-equal (assertions [a : B]),
 
 -- read-assert-store test
--- | assert-equal (network [a : A]),
+-- | assert-equal (assertions [a : A]),
 
--- unassert-store test (network [a : A]),
+-- unassert-store test (assertions [a : A]),
 
 -- read-store test
--- | assert-equal (network),
+-- | assert-equal (assertions),

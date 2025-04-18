@@ -1,10 +1,10 @@
-(let $x (network [a b c]))
+(let $x (assertions [a b c]))
 
 (assert-equal
-    (network {@ a b c})
+    (assertions {@ a b c})
     $x)
 
-(let $y (network [a b c]))
+(let $y (assertions [a b c]))
 
 (assert-equal $y $x)
 
