@@ -1,10 +1,10 @@
-(assert-equal
+(expect-equal
   (stores)
   [])
 
 (add-store test)
 
-(assert-equal
+(expect-equal
   (stores)
   [test])
 
@@ -12,7 +12,7 @@
 (add-store test3)
 (remove-store test2)
 
-(assert-equal
+(expect-equal
   (stores)
   [test test3])
 
@@ -20,12 +20,12 @@
 
 -- read-store test
 -- | filter (pattern [?name : B])
--- | assert-equal (assertions [a : B]),
+-- | expect-equal (assertions [a : B]),
 
 -- read-assert-store test
--- | assert-equal (assertions [a : A]),
+-- | expect-equal (assertions [a : A]),
 
 -- unassert-store test (assertions [a : A]),
 
 -- read-store test
--- | assert-equal (assertions),
+-- | expect-equal (assertions),

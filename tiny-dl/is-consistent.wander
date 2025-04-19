@@ -1,16 +1,16 @@
--- (assert-equal (assertions [a b c]) (infer (define) (assertions [a b c])))
+-- (expect-equal (assertions [a b c]) (infer (define) (assertions [a b c])))
 
--- (assert-equal
+-- (expect-equal
 --     (assertions [betty : Cat] [betty : Animal])
 --     (infer (definitions (implies Cat Animal)) (assertions [betty : Cat])))
 
-(assert-equal
+(expect-equal
     true 
     (is-consistent 
         (definitions)
         (assertions [betty : Cat])))
 
-(assert-equal
+(expect-equal
     false
     (is-consistent 
         (definitions)

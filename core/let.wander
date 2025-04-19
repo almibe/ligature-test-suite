@@ -1,25 +1,25 @@
 (let $x (assertions [a b c]))
 
-(assert-equal
+(expect-equal
     (assertions {@ a b c})
     $x)
 
 (let $y (assertions [a b c]))
 
-(assert-equal $y $x)
+(expect-equal $y $x)
 
 (let $x 5)
 
-(assert-equal [$x] [5])
+(expect-equal [$x] [5])
 
 (defn wrap [$a] [$a])
 
-(assert-equal 
+(expect-equal 
     (wrap 55)
     [55])
 
 (defn wrap-twice [$a] [[$a]])
 
-(assert-equal 
+(expect-equal 
     (wrap-twice 55)
     [[55]])

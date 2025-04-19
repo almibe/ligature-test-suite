@@ -1,4 +1,4 @@
-(assert-equal
+(expect-equal
     false
     (is-consistent
         (definitions 

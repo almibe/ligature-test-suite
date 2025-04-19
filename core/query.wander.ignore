@@ -1,19 +1,19 @@
-(assert-equal
+(expect-equal
     (query (pattern) (assertions))
     (result-set []))
 
-(assert-equal
+(expect-equal
     (query (pattern [?a ?b ?c]) (assertions [a b c]))
     (result-set [{?a a ?b b ?c c}]))
 
-(assert-equal
+(expect-equal
     (query (pattern [?a b c]) (assertions [d b c]))
     (result-set [{?a d}]))
 
-(assert-equal
+(expect-equal
     (query (pattern [?a d c]) (assertions [a b c]))
     (result-set []))
 
-(assert-equal
+(expect-equal
     (query (pattern [?a b ?c]) (assertions [q b c] [a c c] [a b c]))
     (result-set [{?a q ?c c} {?a a ?c c}]))

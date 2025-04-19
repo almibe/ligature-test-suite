@@ -1,7 +1,7 @@
-(assert-equal
+(expect-equal
     { @ betty : Cat }
     (extract betty (assertions [betty : Cat])))
 
--- assert-equal
+-- expect-equal
 --     { @ betty : Cat name "Betty" }
 --     (extract betty (assertions [betty : Cat] [betty name "Betty"] [bob : Dog])),

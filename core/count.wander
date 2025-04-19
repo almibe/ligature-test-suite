@@ -1,3 +1,3 @@
-(assert-equal "0" (count (assertions)))
-(assert-equal "1" (count (assertions [a b c])))
-(assert-equal "2" (count (assertions [a b c] [e : E])))
+(expect-equal "0" (count (assertions)))
+(expect-equal "1" (count (assertions [a b c])))
+(expect-equal "2" (count (assertions [a b c] [e : E])))

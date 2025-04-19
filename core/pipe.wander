@@ -1,4 +1,4 @@
 (->
    (assertions [a b c])
    (count)
-   (assert-equal "1"))
+   (expect-equal "1"))

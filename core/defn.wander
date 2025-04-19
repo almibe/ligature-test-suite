@@ -1,21 +1,21 @@
 (defn const [] a)
 
-(assert-equal (const) (const))
+(expect-equal (const) (const))
 
 (defn id [$a] $a)
 
-(assert-equal (id d) d)
+(expect-equal (id d) d)
 
 (defn middle [$a $b $c] $b)
 
-(assert-equal (middle d e f) e)
+(expect-equal (middle d e f) e)
 
 (defn id-twice [$fnName] (id $fnName) (id $fnName))
 
-(assert-equal (id-twice test) test)
+(expect-equal (id-twice test) test)
 
 (defn local-val []
     (let $x 5)
     $x)
 
-(assert-equal (local-val) 5)
+(expect-equal (local-val) 5)

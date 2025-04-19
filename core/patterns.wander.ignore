@@ -1,29 +1,29 @@
-(assert-equal
+(expect-equal
   (pattern [?a b c])
   (pattern 
     { @ ?a
       b c }))
 
-(assert-equal
+(expect-equal
   (pattern [?a b c] [?a e ?f])
   (pattern 
     { @ ?a
       b c
       e ?f }))
     
-(assert-equal
+(expect-equal
   (pattern [?a : A])
   (pattern 
     { @ ?a
       : A }))
 
-(assert-equal
+(expect-equal
   (pattern [a : A] [a : B])
   (pattern 
     { @ a
       : [A B] }))
 
-(assert-equal
+(expect-equal
   (pattern [a b ?c] [?c d e])
   (pattern 
     { @ a

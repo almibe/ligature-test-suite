@@ -1,29 +1,29 @@
-(assert-equal
+(expect-equal
   (assertions [a b c])
   (assertions 
     { @ a
       b c }))
 
-(assert-equal
+(expect-equal
   (assertions [a b c] [a e f])
   (assertions 
     { @ a
       b c
       e f }))
   
-(assert-equal
+(expect-equal
   (assertions [a : A])
   (assertions 
     { @ a
       : A }))
 
-(assert-equal
+(expect-equal
   (assertions [a : A] [a : B])
   (assertions 
     { @ a
       : [A B] }))
 
-(assert-equal
+(expect-equal
   (assertions [a b c] [c d e])
   (assertions 
     { @ a

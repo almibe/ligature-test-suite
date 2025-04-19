@@ -1,4 +1,4 @@
-assert-equal
+expect-equal
     (assertions
         [betty : Named]
         [betty name "Betty"])
@@ -13,7 +13,7 @@ assert-equal
         (assertions 
             [betty name "Betty"])),
 
--- assert-equal
+-- expect-equal
 --     (assertions
 --         [betty : Cat]
 --         [betty address "100 Fake Street"] 

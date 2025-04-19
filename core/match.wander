@@ -1,4 +1,4 @@
-(assert-equal
+(expect-equal
     (match hello
         hello -> bye
         bye -> hello)
