@@ -1,0 +1,14 @@
+(expect-equal
+    (set [])
+    (interpret 
+        (definitions)
+        (assertions)))
+
+(expect-equal
+    (set [ { 
+        individuals { a { isa (set [A]) is-not (set []) } }
+        roles {}
+        attributes {}}])
+    (interpret 
+        (definitions)
+        (assertions (isa a A))))

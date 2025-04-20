@@ -10,3 +10,4 @@
 (expect-equal (isa betty (and Cat (not Dog))) (isa betty (and Cat (not Dog))))
 (expect-equal (exists a A) (exists a A))
 (expect-equal (all a A) (all a A))
+(expect-equal {a {a a}} {a {a (id a)}})
