@@ -12,3 +12,21 @@
     (interpret 
         (definitions)
         (assertions (isa a A))))
+
+(expect-equal
+    (interpret 
+        (definitions (implies A B))
+        (assertions (isa a A)))
+    (set [ { 
+        individuals { a { isa (set [A B]) is-not (set []) } }
+        roles {}
+        attributes {}}]))
+
+(expect-equal
+    (set [ { 
+        individuals { a { isa (set [A B C]) is-not (set []) } }
+        roles {}
+        attributes {}}])
+    (interpret 
+        (definitions (implies A B) (implies B C))
+        (assertions (isa a A))))

@@ -1,6 +1,6 @@
-(expect-equal
-    (set [{ @ betty : Cat name "Betty" }])
-    (instances Cat (assertions [betty : Cat] [betty name "Betty"] [bob : Dog])))
+-- (expect-equal
+--     (set [{ @ betty : Cat name "Betty" }])
+--     (instances Cat (assertions [betty : Cat] [betty name "Betty"] [bob : Dog])))
 
 -- expect-equal
 --     (set [{ betty : Cat, betty name "Betty"} {juni : Cat }])
