@@ -1,9 +1,3 @@
--- (expect-equal (assertions [a b c]) (infer (define) (assertions [a b c])))
-
--- (expect-equal
---     (assertions [betty : Cat] [betty : Animal])
---     (infer (definitions (implies Cat Animal)) (assertions [betty : Cat])))
-
 (expect-equal
     true 
     (is-consistent 
@@ -15,3 +9,72 @@
     (is-consistent 
         (definitions)
         (assertions [betty : Cat] [betty ~ Cat])))
+
+(expect-equal
+    false
+    (is-consistent
+        (definitions (implies Cat Animal))
+        (assertions [betty : Cat] [betty ~ Animal])))
+
+-- (expect-equal
+--     (set [])
+--     (interpret 
+--         (definitions)
+--         (assertions)))
+
+-- (expect-equal
+--     (set [ { 
+--         individuals { a { isa (set [A]) is-not (set []) } }
+--         roles {}
+--         attributes {}}])
+--     (interpret 
+--         (definitions)
+--         (assertions (isa a A))))
+
+-- (expect-equal
+--     (interpret 
+--         (definitions (implies A B))
+--         (assertions (isa a A)))
+--     (set [ { 
+--         individuals { a { isa (set [A B]) is-not (set []) } }
+--         roles {}
+--         attributes {}}]))
+
+-- (expect-equal
+--     (set [ { 
+--         individuals { a { isa (set [A B C]) is-not (set []) } }
+--         roles {}
+--         attributes {}}])
+--     (interpret 
+--         (definitions (implies A B) (implies B C))
+--         (assertions (isa a A))))
+
+-- (expect-equal
+--     (interpret 
+--         (definitions)
+--         (assertions (isa a (and A B))))
+--     (set [ { 
+--         individuals { a { isa (set [A B]) is-not (set []) } }
+--         roles {}
+--         attributes {}}]))
+
+-- (expect-equal
+--     (interpret 
+--         (definitions)
+--         (assertions (isa a (or A B))))
+--     (set [ { 
+--         individuals { a { isa (set [A]) is-not (set []) } }
+--         roles {}
+--         attributes {}}
+--         { individuals { a { isa (set [B]) is-not (set []) } }
+--           roles {}
+--           attributes {}}]))
+
+-- (expect-equal
+--     (interpret 
+--         (definitions (define-concept A (and B C)))
+--         (assertions (isa a A)))
+--     (set [ { 
+--         individuals { a { isa (set [A B C]) is-not (set []) } }
+--         roles {}
+--         attributes {}}]))
