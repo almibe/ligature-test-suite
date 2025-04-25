@@ -13,49 +13,49 @@
 (expect-equal
     (is-consistent
         (definitions)
-        (assertions (isa a (and A B)) (isa a (not B))))
+        (assertions (instance a (and A B)) (instance a (not B))))
     false)
 
 (expect-equal
     (is-consistent 
         (definitions)
-        (assertions (isa a (or A B)) (isa a (not A))))
+        (assertions (instance a (or A B)) (instance a (not A))))
     true)
 
 (expect-equal
     (is-consistent
         (definitions)
-        (assertions (isa a (not (not A))) (isa a (not A))))
+        (assertions (instance a (not (not A))) (instance a (not A))))
     false)
 
 (expect-equal
     (is-consistent
         (definitions)
-        (assertions (isa a (or A B)) (isa a (not A)) (isa a (not B))))
+        (assertions (instance a (or A B)) (instance a (not A)) (instance a (not B))))
     false)
 
 (expect-equal
     (is-consistent
         (definitions)
-        (assertions (isa a (or A B)) (isa a (not (and A B)))))
+        (assertions (instance a (or A B)) (instance a (not (and A B)))))
     true)
 
 (expect-equal
     (is-consistent
         (definitions)
-        (assertions (isa a (or A B)) (isa a (not (or A B)))))
+        (assertions (instance a (or A B)) (instance a (not (or A B)))))
     false)
 
 -- (expect-equal
 --     (is-consistent 
 --         (definitions)
---         (assertions (isa a (exists b C))))
+--         (assertions (instance a (exists b C))))
 --     true)
 
 -- (expect-equal
 --     (is-consistent 
 --         (definitions)
---         (assertions (isa a (all b C))))
+--         (assertions (instance a (all b C))))
 --     true)
 
 -- all
@@ -74,13 +74,13 @@
 --     false
 --     (is-consistent 
 --         (definitions (implies A B) (implies B C))
---         (assertions (isa a A) (isa a (not C)))))
+--         (assertions (instance a A) (instance a (not C)))))
 
 -- (expect-equal
 --     (interpret 
 --         (definitions (define-concept A (and B C)))
---         (assertions (isa a A)))
+--         (assertions (instance a A)))
 --     (set [ { 
---         individuals { a { isa (set [A B C]) is-not (set []) } }
+--         individuals { a { instance (set [A B C]) is-not (set []) } }
 --         roles {}
 --         attributes {}}]))

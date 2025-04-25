@@ -4,5 +4,5 @@
         (definitions 
             (define-concept Dog Doggo))
         (assertions 
-            (isa megan Dog)
-            (isa megan (not Doggo)))))
+            (instance megan Dog)
+            (instance megan (not Doggo)))))
