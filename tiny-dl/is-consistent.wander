@@ -11,64 +11,70 @@
         (assertions [betty : Cat] [betty ~ Cat])))
 
 (expect-equal
-    false
     (is-consistent
-        (definitions (implies Cat Animal))
-        (assertions [betty : Cat] [betty ~ Animal])))
+        (definitions)
+        (assertions (isa a (and A B)) (isa a (not B))))
+    false)
+
+(expect-equal
+    (is-consistent 
+        (definitions)
+        (assertions (isa a (or A B)) (isa a (not A))))
+    true)
+
+(expect-equal
+    (is-consistent
+        (definitions)
+        (assertions (isa a (not (not A))) (isa a (not A))))
+    false)
+
+(expect-equal
+    (is-consistent
+        (definitions)
+        (assertions (isa a (or A B)) (isa a (not A)) (isa a (not B))))
+    false)
+
+(expect-equal
+    (is-consistent
+        (definitions)
+        (assertions (isa a (or A B)) (isa a (not (and A B)))))
+    true)
+
+(expect-equal
+    (is-consistent
+        (definitions)
+        (assertions (isa a (or A B)) (isa a (not (or A B)))))
+    false)
 
 -- (expect-equal
---     (set [])
---     (interpret 
+--     (is-consistent 
 --         (definitions)
---         (assertions)))
+--         (assertions (isa a (exists b C))))
+--     true)
 
 -- (expect-equal
---     (set [ { 
---         individuals { a { isa (set [A]) is-not (set []) } }
---         roles {}
---         attributes {}}])
---     (interpret 
+--     (is-consistent 
 --         (definitions)
---         (assertions (isa a A))))
+--         (assertions (isa a (all b C))))
+--     true)
+
+-- all
+-- exists
+-- top
+-- bottom
+
 
 -- (expect-equal
---     (interpret 
---         (definitions (implies A B))
---         (assertions (isa a A)))
---     (set [ { 
---         individuals { a { isa (set [A B]) is-not (set []) } }
---         roles {}
---         attributes {}}]))
+--     false
+--     (is-consistent
+--         (definitions (implies Cat Animal))
+--         (assertions [betty : Cat] [betty ~ Animal])))
 
 -- (expect-equal
---     (set [ { 
---         individuals { a { isa (set [A B C]) is-not (set []) } }
---         roles {}
---         attributes {}}])
---     (interpret 
+--     false
+--     (is-consistent 
 --         (definitions (implies A B) (implies B C))
---         (assertions (isa a A))))
-
--- (expect-equal
---     (interpret 
---         (definitions)
---         (assertions (isa a (and A B))))
---     (set [ { 
---         individuals { a { isa (set [A B]) is-not (set []) } }
---         roles {}
---         attributes {}}]))
-
--- (expect-equal
---     (interpret 
---         (definitions)
---         (assertions (isa a (or A B))))
---     (set [ { 
---         individuals { a { isa (set [A]) is-not (set []) } }
---         roles {}
---         attributes {}}
---         { individuals { a { isa (set [B]) is-not (set []) } }
---           roles {}
---           attributes {}}]))
+--         (assertions (isa a A) (isa a (not C)))))
 
 -- (expect-equal
 --     (interpret 
