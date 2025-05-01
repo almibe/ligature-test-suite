@@ -52,11 +52,17 @@
         (assertions (instance a (exists b C))))
     true)
 
--- (expect-equal
---     (is-consistent 
---         (definitions)
---         (assertions (instance a (all b C))))
---     true)
+(expect-equal
+    (is-consistent 
+        (definitions)
+        (assertions (instance a (all b C))))
+    true)
+
+(expect-equal
+    (is-consistent 
+        (definitions)
+        (assertions (instance a (all b C)) [a b c] [c ~ C]))
+    false)    
 
 -- top
 -- bottom
