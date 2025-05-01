@@ -46,11 +46,11 @@
         (assertions (instance a (or A B)) (instance a (not (or A B)))))
     false)
 
--- (expect-equal
---     (is-consistent 
---         (definitions)
---         (assertions (instance a (exists b C))))
---     true)
+(expect-equal
+    (is-consistent 
+        (definitions)
+        (assertions (instance a (exists b C))))
+    true)
 
 -- (expect-equal
 --     (is-consistent 
@@ -58,29 +58,29 @@
 --         (assertions (instance a (all b C))))
 --     true)
 
--- all
--- exists
 -- top
 -- bottom
 
+(expect-equal
+    false
+    (is-consistent
+        (definitions)
+        (assertions [betty : Cat] [betty ~ Cat])))
 
--- (expect-equal
---     false
---     (is-consistent
---         (definitions (implies Cat Animal))
---         (assertions [betty : Cat] [betty ~ Animal])))
+(expect-equal
+    false
+    (is-consistent
+        (definitions (implies Cat Animal))
+        (assertions [betty : Cat] [betty ~ Animal])))
 
--- (expect-equal
---     false
---     (is-consistent 
---         (definitions (implies A B) (implies B C))
---         (assertions (instance a A) (instance a (not C)))))
-
--- (expect-equal
---     (interpret 
---         (definitions (define-concept A (and B C)))
---         (assertions (instance a A)))
---     (set [ { 
---         individuals { a { instance (set [A B C]) is-not (set []) } }
---         roles {}
---         attributes {}}]))
+(expect-equal
+    false
+    (is-consistent 
+        (definitions (implies A B) (implies B C))
+        (assertions (instance a A) (instance a (not C)))))
+        
+(expect-equal
+    (is-consistent 
+        (definitions (implies A (and B C)))
+        (assertions (instance a A) (instance a (not C))))
+    false)

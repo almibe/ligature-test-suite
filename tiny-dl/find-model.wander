@@ -1,0 +1,26 @@
+(expect-equal
+    (find-model 
+        (definitions) 
+        (assertions)) 
+    {})
+
+(expect-equal
+    (find-model (definitions) (assertions (instance a A)))
+    { individuals {a { is-a (set [A]) is-not (set []) }} 
+      roles (set [])
+      attributes (set [])})
+
+(expect-equal
+    (find-model (definitions) (assertions [a b c]))
+    { individuals {
+        a { is-a (set []) is-not (set []) }
+        c { is-a (set []) is-not (set []) }} 
+      roles (set [[a b c]])
+      attributes (set [])})
+
+(expect-equal
+    (find-model (definitions) (assertions [a b "c"]))
+    { individuals {
+        a { is-a (set []) is-not (set []) } }
+      roles (set [])
+      attributes (set [[a b "c"]])})
