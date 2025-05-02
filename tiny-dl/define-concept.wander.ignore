@@ -1,8 +1,0 @@
-(expect-equal
-    false
-    (is-consistent
-        (definitions 
-            (define-concept Dog Doggo))
-        (assertions 
-            (instance megan Dog)
-            (instance megan (not Doggo)))))

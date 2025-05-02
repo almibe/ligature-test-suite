@@ -2,7 +2,16 @@
     false
     (is-consistent
         (definitions 
-            (define-concept
+            (equivalent Dog Doggo))
+        (assertions 
+            (instance megan Dog)
+            (instance megan (not Doggo)))))
+
+(expect-equal
+    false
+    (is-consistent
+        (definitions 
+            (equivalent
                 CarnivorousPlant
                 (and Plant Carnivore)))
         (assertions 
