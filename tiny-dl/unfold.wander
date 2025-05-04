@@ -15,3 +15,9 @@
     (unfold
         (definitions (equivalent A (and B C)))
         (assertions (instance a A))))
+
+(expect-equal
+    (assertions [betty ~ Animal] [betty : Animal])
+    (unfold
+        (definitions (implies Cat Animal))
+        (assertions [betty : Cat] [betty ~ Animal])))

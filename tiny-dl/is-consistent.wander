@@ -79,14 +79,14 @@
         (definitions (implies Cat Animal))
         (assertions [betty : Cat] [betty ~ Animal])))
 
--- (expect-equal
---     false
---     (is-consistent 
---         (definitions (implies A B) (implies B C))
---         (assertions (instance a A) (instance a (not C)))))
+(expect-equal
+    false
+    (is-consistent 
+        (definitions (implies A B) (implies B C))
+        (assertions (instance a A) (instance a (not C)))))
         
--- (expect-equal
---     (is-consistent 
---         (definitions (implies A (and B C)))
---         (assertions (instance a A) (instance a (not C))))
---     false)
+(expect-equal
+    (is-consistent 
+        (definitions (implies A (and B C)))
+        (assertions (instance a A) (instance a (not C))))
+    false)
