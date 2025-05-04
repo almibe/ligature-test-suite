@@ -9,3 +9,9 @@
     (unfold
         (definitions (equivalent A B))
         (assertions (instance a A))))
+
+(expect-equal
+    (assertions (instance a (and B C)))
+    (unfold
+        (definitions (equivalent A (and B C)))
+        (assertions (instance a A))))

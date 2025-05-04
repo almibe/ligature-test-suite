@@ -9,6 +9,11 @@
         (definitions ( equivalent A B ))))
        
 (expect-equal
+    true
+    (is-definitorial
+        (definitions (equivalent A (and B C)))))
+            
+(expect-equal
     false
     (is-definitorial 
         (definitions ( equivalent A C ) ( equivalent A B ))))
@@ -32,4 +37,3 @@
     false
     (is-definitorial 
         (definitions ( equivalent A B ) ( equivalent B C ) ( equivalent C (or D A) ))))
-        

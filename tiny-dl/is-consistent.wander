@@ -73,11 +73,11 @@
         (definitions)
         (assertions [betty : Cat] [betty ~ Cat])))
 
--- (expect-equal
---     false
---     (is-consistent
---         (definitions (implies Cat Animal))
---         (assertions [betty : Cat] [betty ~ Animal])))
+(expect-equal
+    false
+    (is-consistent
+        (definitions (implies Cat Animal))
+        (assertions [betty : Cat] [betty ~ Animal])))
 
 -- (expect-equal
 --     false
