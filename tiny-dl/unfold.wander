@@ -1,0 +1,11 @@
+(expect-equal
+    (assertions)
+    (unfold
+        (definitions )
+        (assertions )))
+
+(expect-equal
+    (assertions (instance a B))
+    (unfold
+        (definitions (equivalent A B))
+        (assertions (instance a A))))
