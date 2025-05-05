@@ -90,3 +90,42 @@
         (definitions (implies A (and B C)))
         (assertions (instance a A) (instance a (not C))))
     false)
+
+-- (expect-equal
+--     (is-consistent
+--         (definitions)
+--         (assertions 
+--             [betty : Plant]
+--             [betty : Carnivore]
+--             (instance betty (or (not Plant) (not Carnivore)))))
+--     false)
+
+-- (expect-equal
+--     false
+--     (is-consistent
+--         (definitions)
+--         (assertions 
+--             [betty : Plant]
+--             [betty : Carnivore]
+--             (instance betty (not (and Plant Carnivore))))))
+
+-- (expect-equal
+--     false
+--     (is-consistent
+--         (definitions 
+--             (equivalent Dog Doggo))
+--         (assertions 
+--             (instance megan Dog)
+--             (instance megan (not Doggo)))))
+
+-- (expect-equal
+--     false
+--     (is-consistent
+--         (definitions 
+--             (equivalent
+--                 CarnivorousPlant
+--                 (and Plant Carnivore)))
+--         (assertions 
+--             [betty : Plant]
+--             [betty : Carnivore]
+--             [betty ~ CarnivorousPlant])))
