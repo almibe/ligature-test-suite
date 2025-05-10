@@ -1,0 +1,33 @@
+(expect-equal
+    true
+    (is-consistent
+        (definitions 
+            (equivalent
+                Person 
+                (all degree-from School)))
+        (assertions 
+            [bob degree-from example-university] 
+            [bob : Person]
+            [example-university : School])))
+
+(expect-equal
+    false
+    (is-consistent
+        (definitions 
+            (equivalent
+                Person 
+                (all degree-from School)))
+        (assertions 
+            [bob degree-from example-university] 
+            [bob ~ Person])))
+
+-- (expect-equal
+--     false
+--     (is-consistent
+--         (definitions 
+--             (equivalent
+--                 Person 
+--                 (all degree-from School)))
+--         (assertions 
+--             [bob degree-from example-university] 
+--             [example-university ~ School])))

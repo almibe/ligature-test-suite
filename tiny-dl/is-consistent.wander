@@ -170,13 +170,14 @@
             [betty : C]
             [betty : A])))
 
--- (expect-equal
---     true
---     (is-consistent
---         (definitions 
---             (equivalent
---                 A
---                 (and (not B) (exists c D))))
---         (assertions 
---             [betty : A]
---             )))
+(expect-equal
+    false
+    (is-consistent
+        (definitions 
+            (equivalent
+                A
+                (and (not B) (exists c D))))
+        (assertions 
+            [betty : A]
+            [betty : B]
+            )))

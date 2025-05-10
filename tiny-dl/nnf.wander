@@ -13,3 +13,15 @@
 (expect-equal
     (and (and (not A) (not B)))
     (nnf (definitions (and (not A) (not B)))))
+
+(expect-equal
+    (and A B C)
+    (nnf (definitions A B C)))
+
+(expect-equal
+    (and (or (not B) (not C)))
+    (nnf (definitions (not (and B C)))))
+
+(expect-equal
+    (or (not B) C)
+    (nnf (definitions (implies B C))))
