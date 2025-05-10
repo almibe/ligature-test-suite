@@ -1,0 +1,16 @@
+(expect-equal 
+    (definitions )
+    (definitions ))
+
+(expect-equal 
+    (definitions A )
+    (definitions A ))
+    
+
+(expect-equal 
+    (definitions A B C)
+    (definitions A B C))
+
+(expect-equal 
+    (definitions (implies A B) (or C D))
+    (definitions (implies A B) (or C D)))

@@ -133,3 +133,50 @@
             [betty : Plant]
             [betty : Carnivore]
             [betty ~ CarnivorousPlant])))
+
+(expect-equal
+    true
+    (is-consistent
+        (definitions 
+            (equivalent
+                A
+                (and (not B) C)))
+        (assertions 
+            [betty : B]
+            [betty : C]
+            [betty ~ A])))
+
+(expect-equal
+    true
+    (is-consistent
+        (definitions 
+            (equivalent
+                A
+                (or (not B) C)))
+        (assertions 
+            [betty ~ B]
+            [betty : C]
+            [betty : A])))
+
+(expect-equal
+    true
+    (is-consistent
+        (definitions 
+            (equivalent
+                A
+                (or (not B) C)))
+        (assertions 
+            [betty : B]
+            [betty : C]
+            [betty : A])))
+
+-- (expect-equal
+--     true
+--     (is-consistent
+--         (definitions 
+--             (equivalent
+--                 A
+--                 (and (not B) (exists c D))))
+--         (assertions 
+--             [betty : A]
+--             )))

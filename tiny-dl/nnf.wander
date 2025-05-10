@@ -1,0 +1,15 @@
+(expect-equal
+    (top )
+    (nnf (definitions )))
+
+(expect-equal
+    (and A)
+    (nnf (definitions A)))
+
+(expect-equal
+    (and (or A B))
+    (nnf (definitions (or A B))))
+    
+(expect-equal
+    (and (and (not A) (not B)))
+    (nnf (definitions (and (not A) (not B)))))
