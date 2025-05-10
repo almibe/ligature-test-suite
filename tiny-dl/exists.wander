@@ -2,7 +2,7 @@
     false
     (is-consistent
         (definitions 
-            (define-concept
+            (equivalent
                 Named 
                 (exists name)))
         (assertions 
