@@ -1,27 +1,41 @@
-(expect-equal
-    (top )
-    (nnf (definitions )))
+(test-group
+    "nnf tests"
+    (expect-equal
+        "Empty"
+        (top )
+        (nnf (definitions )))
 
-(expect-equal
-    (and A)
-    (nnf (definitions A)))
+    (expect-equal
+        "Single atomic concept"
+        (and A)
+        (nnf (definitions A)))
 
-(expect-equal
-    (and (or A B))
-    (nnf (definitions (or A B))))
+    (expect-equal
+        "Single disjunction"
+        (and (or A B))
+        (nnf (definitions (or A B))))
+        
+    (expect-equal
+        "conjunction and negation"
+        (and (and (not A) (not B)))
+        (nnf (definitions (and (not A) (not B)))))
+
+    (expect-equal
+        "three atomic concepts"
+        (and A B C)
+        (nnf (definitions A B C)))
+
+    (expect-equal
+        "de morgan's law example"
+        (and (or (not B) (not C)))
+        (nnf (definitions (not (and B C)))))
+
+    (expect-equal
+        "implies"
+        (and (or (not B) C))
+        (nnf (definitions (implies B C))))
     
-(expect-equal
-    (and (and (not A) (not B)))
-    (nnf (definitions (and (not A) (not B)))))
-
-(expect-equal
-    (and A B C)
-    (nnf (definitions A B C)))
-
-(expect-equal
-    (and (or (not B) (not C)))
-    (nnf (definitions (not (and B C)))))
-
-(expect-equal
-    (or (not B) C)
-    (nnf (definitions (implies B C))))
+    (expect-equal
+        "equivalent"
+        (and (and (or (not B) C) (or (not C) B)))
+        (nnf (definitions (equivalent B C)))))
