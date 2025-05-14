@@ -1,33 +1,46 @@
-(expect-equal
-    true
-    (is-consistent
-        (definitions 
-            (equivalent
-                Person 
-                (all degree-from School)))
-        (assertions 
-            [bob degree-from example-university] 
-            [bob : Person]
-            [example-university : School])))
+(test-group
+    "all constructor tests"
+    (expect-equal
+        "basic check"
+        false
+        (is-consistent
+            (definitions)
+            (assertions (instance a (all b C)) [a b c] [c ~ C])))
 
-(expect-equal
-    false
-    (is-consistent
-        (definitions 
-            (equivalent
-                Person 
-                (all degree-from School)))
-        (assertions 
-            [bob degree-from example-university] 
-            [bob ~ Person])))
+    (expect-equal
+        "basic check"
+        true
+        (is-consistent
+            (definitions 
+                (equivalent
+                    Person 
+                    (all degree-from School)))
+            (assertions 
+                [bob degree-from example-university] 
+                [bob : Person]
+                [example-university : School])))
 
--- (expect-equal
---     false
---     (is-consistent
---         (definitions 
---             (equivalent
---                 Person 
---                 (all degree-from School)))
---         (assertions 
---             [bob degree-from example-university] 
---             [example-university ~ School])))
+    (expect-equal
+        ""
+        true
+        (is-consistent
+            (definitions 
+                (equivalent
+                    Person 
+                    (all degree-from School)))
+            (assertions 
+                [bob degree-from example-university] 
+                [bob ~ Person])))
+
+    (expect-equal
+        "example inconsistency with all"
+        false
+        (is-consistent
+            (definitions 
+                (equivalent
+                    Member 
+                    (all member-of Group)))
+            (assertions 
+                [bob : Member]
+                [bob member-of group1] 
+                [group1 ~ Group]))))

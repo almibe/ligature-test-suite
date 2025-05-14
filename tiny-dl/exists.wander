@@ -3,8 +3,20 @@
     (is-consistent
         (definitions 
             (equivalent
-                Named 
-                (exists name)))
+                Member 
+                (exists member-of Group)))
         (assertions 
-            [bob name "Bob"] 
-            [bob ~ Named])))
+            [group1 : Group]
+            [bob member-of group1] 
+            [bob ~ Member])))
+
+-- (expect-equal
+--     false
+--     (is-consistent
+--         (definitions 
+--             (equivalent
+--                 Named 
+--                 (exists name)))
+--         (assertions 
+--             [bob name "Bob"] 
+--             [bob ~ Named])))

@@ -32,10 +32,10 @@
 
     (expect-equal
         "implies"
-        (and (or (not B) C))
+        (and (or C (not B)))
         (nnf (definitions (implies B C))))
     
     (expect-equal
         "equivalent"
-        (and (and (or (not B) C) (or (not C) B)))
+        (and (and (or C (not B)) (or B (not C))))
         (nnf (definitions (equivalent B C)))))
