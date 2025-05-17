@@ -1,5 +1,6 @@
 (expect-equal a a)
 (expect-equal "a" "a")
+(expect-equal (literal "a" Text en) (literal "a" Text en))
 (expect-equal [] [])
 (expect-equal (assertions) (assertions))
 (expect-equal (assertions [a b c]) (assertions [a b c]))
