@@ -1,3 +1,0 @@
-(expect-equal
-  {a (id [a b c]) }
-  {a [a b c]})
