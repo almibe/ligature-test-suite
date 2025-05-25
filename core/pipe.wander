@@ -1,4 +1,4 @@
 (->
-   (assertions [a b c])
+   (a-box [a b c])
    (count)
    (expect-equal "1"))

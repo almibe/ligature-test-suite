@@ -1,39 +1,39 @@
 (expect-equal
     true
     (is-definitorial 
-        (definitions)))
+        (t-box)))
 
 (expect-equal
     true
     (is-definitorial 
-        (definitions ( equivalent A B ))))
+        (t-box ( equivalent A B ))))
        
 (expect-equal
     true
     (is-definitorial
-        (definitions (equivalent A (and B C)))))
+        (t-box (equivalent A (and B C)))))
             
 (expect-equal
     false
     (is-definitorial 
-        (definitions ( equivalent A C ) ( equivalent A B ))))
+        (t-box ( equivalent A C ) ( equivalent A B ))))
 
 (expect-equal
     false
     (is-definitorial 
-        (definitions ( equivalent A B ) ( equivalent B A ))))
+        (t-box ( equivalent A B ) ( equivalent B A ))))
 
 (expect-equal
     false
     (is-definitorial 
-        (definitions ( equivalent A B ) ( equivalent B C ) ( equivalent C A ))))
+        (t-box ( equivalent A B ) ( equivalent B C ) ( equivalent C A ))))
 
 (expect-equal
     true
     (is-definitorial 
-        (definitions ( equivalent A B ) ( equivalent B C ) ( equivalent C D ))))
+        (t-box ( equivalent A B ) ( equivalent B C ) ( equivalent C D ))))
 
 (expect-equal
     false
     (is-definitorial 
-        (definitions ( equivalent A B ) ( equivalent B C ) ( equivalent C (or D A) ))))
+        (t-box ( equivalent A B ) ( equivalent B C ) ( equivalent C (or D A) ))))

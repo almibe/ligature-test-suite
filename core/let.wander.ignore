@@ -1,10 +1,10 @@
-(let $x (assertions [a b c]))
+(let $x (a-box [a b c]))
 
 (expect-equal
-    (assertions {@ a b c})
+    (a-box {@ a b c})
     $x)
 
-(let $y (assertions [a b c]))
+(let $y (a-box [a b c]))
 
 (expect-equal $y $x)
 

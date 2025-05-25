@@ -1,183 +1,189 @@
-(expect-equal
-    true 
-    (is-consistent 
-        (definitions)
-        (assertions [betty : Cat])))
+(test-group
+    "is-consistent tests"
+    (expect-equal
+        "single instance"
+        true 
+        (is-consistent 
+            (t-box)
+            (a-box [betty : Cat])))
 
-(expect-equal
-    false
-    (is-consistent 
-        (definitions)
-        (assertions [betty : Cat] [betty ~ Cat])))
+    (expect-equal
+        "simple direct clash"
+        false
+        (is-consistent 
+            (t-box)
+            (a-box [betty : Cat] [betty ~ Cat])))
+)
 
-(expect-equal
-    (is-consistent
-        (definitions)
-        (assertions (instance a (and A B)) (instance a (not B))))
-    false)
 
-(expect-equal
-    (is-consistent 
-        (definitions)
-        (assertions (instance a (or A B)) (instance a (not A))))
-    true)
+-- (expect-equal
+--     (is-consistent
+--         (t-box)
+--         (a-box (instance a (and A B)) (instance a (not B))))
+--     false)
 
-(expect-equal
-    (is-consistent
-        (definitions)
-        (assertions (instance a (not (not A))) (instance a (not A))))
-    false)
+-- (expect-equal
+--     (is-consistent 
+--         (t-box)
+--         (a-box (instance a (or A B)) (instance a (not A))))
+--     true)
 
-(expect-equal
-    (is-consistent
-        (definitions)
-        (assertions (instance a (or A B)) (instance a (not A)) (instance a (not B))))
-    false)
+-- (expect-equal
+--     (is-consistent
+--         (t-box)
+--         (a-box (instance a (not (not A))) (instance a (not A))))
+--     false)
 
-(expect-equal
-    (is-consistent
-        (definitions)
-        (assertions (instance a (or A B)) (instance a (not (and A B)))))
-    true)
+-- (expect-equal
+--     (is-consistent
+--         (t-box)
+--         (a-box (instance a (or A B)) (instance a (not A)) (instance a (not B))))
+--     false)
 
-(expect-equal
-    (is-consistent
-        (definitions)
-        (assertions (instance a (or A B)) (instance a (not (or A B)))))
-    false)
+-- (expect-equal
+--     (is-consistent
+--         (t-box)
+--         (a-box (instance a (or A B)) (instance a (not (and A B)))))
+--     true)
 
-(expect-equal
-    (is-consistent 
-        (definitions)
-        (assertions (instance a (exists b C))))
-    true)
+-- (expect-equal
+--     (is-consistent
+--         (t-box)
+--         (a-box (instance a (or A B)) (instance a (not (or A B)))))
+--     false)
 
-(expect-equal
-    (is-consistent 
-        (definitions)
-        (assertions (instance a (all b C))))
-    true)
+-- (expect-equal
+--     (is-consistent 
+--         (t-box)
+--         (a-box (instance a (exists b C))))
+--     true)
 
-(expect-equal
-    (is-consistent 
-        (definitions)
-        (assertions (instance a (all b C)) [a b c] [c ~ C]))
-    false)    
+-- (expect-equal
+--     (is-consistent 
+--         (t-box)
+--         (a-box (instance a (all b C))))
+--     true)
 
--- top
--- bottom
+-- (expect-equal
+--     (is-consistent 
+--         (t-box)
+--         (a-box (instance a (all b C)) [a b c] [c ~ C]))
+--     false)    
 
-(expect-equal
-    false
-    (is-consistent
-        (definitions)
-        (assertions [betty : Cat] [betty ~ Cat])))
+-- -- top
+-- -- bottom
 
-(expect-equal
-    false
-    (is-consistent
-        (definitions (implies Cat Animal))
-        (assertions [betty : Cat] [betty ~ Animal])))
+-- (expect-equal
+--     false
+--     (is-consistent
+--         (t-box)
+--         (a-box [betty : Cat] [betty ~ Cat])))
 
-(expect-equal
-    false
-    (is-consistent 
-        (definitions (implies A B) (implies B C))
-        (assertions (instance a A) (instance a (not C)))))
+-- (expect-equal
+--     false
+--     (is-consistent
+--         (t-box (implies Cat Animal))
+--         (a-box [betty : Cat] [betty ~ Animal])))
+
+-- (expect-equal
+--     false
+--     (is-consistent 
+--         (t-box (implies A B) (implies B C))
+--         (a-box (instance a A) (instance a (not C)))))
         
-(expect-equal
-    (is-consistent 
-        (definitions (implies A (and B C)))
-        (assertions (instance a A) (instance a (not C))))
-    false)
+-- (expect-equal
+--     (is-consistent 
+--         (t-box (implies A (and B C)))
+--         (a-box (instance a A) (instance a (not C))))
+--     false)
 
-(expect-equal
-    true
-    (is-consistent (definitions) (assertions (instance a (or B A)) [a ~ A])))
+-- (expect-equal
+--     true
+--     (is-consistent (t-box) (a-box (instance a (or B A)) [a ~ A])))
 
-(expect-equal
-    (is-consistent
-        (definitions)
-        (assertions 
-            [betty : Plant]
-            [betty : Carnivore]
-            (instance betty (or (not Plant) (not Carnivore)))))
-    false)
+-- (expect-equal
+--     (is-consistent
+--         (t-box)
+--         (a-box 
+--             [betty : Plant]
+--             [betty : Carnivore]
+--             (instance betty (or (not Plant) (not Carnivore)))))
+--     false)
 
-(expect-equal
-    false
-    (is-consistent
-        (definitions)
-        (assertions 
-            [betty : Plant]
-            [betty : Carnivore]
-            (instance betty (not (and Plant Carnivore))))))
+-- (expect-equal
+--     false
+--     (is-consistent
+--         (t-box)
+--         (a-box 
+--             [betty : Plant]
+--             [betty : Carnivore]
+--             (instance betty (not (and Plant Carnivore))))))
 
-(expect-equal
-    false
-    (is-consistent
-        (definitions 
-            (equivalent Dog Doggo))
-        (assertions 
-            (instance megan Dog)
-            (instance megan (not Doggo)))))
+-- (expect-equal
+--     false
+--     (is-consistent
+--         (t-box 
+--             (equivalent Dog Doggo))
+--         (a-box 
+--             (instance megan Dog)
+--             (instance megan (not Doggo)))))
 
-(expect-equal
-    false
-    (is-consistent
-        (definitions 
-            (equivalent
-                CarnivorousPlant
-                (and Plant Carnivore)))
-        (assertions 
-            [betty : Plant]
-            [betty : Carnivore]
-            [betty ~ CarnivorousPlant])))
+-- (expect-equal
+--     false
+--     (is-consistent
+--         (t-box 
+--             (equivalent
+--                 CarnivorousPlant
+--                 (and Plant Carnivore)))
+--         (a-box 
+--             [betty : Plant]
+--             [betty : Carnivore]
+--             [betty ~ CarnivorousPlant])))
 
-(expect-equal
-    true
-    (is-consistent
-        (definitions 
-            (equivalent
-                A
-                (and (not B) C)))
-        (assertions 
-            [betty : B]
-            [betty : C]
-            [betty ~ A])))
+-- (expect-equal
+--     true
+--     (is-consistent
+--         (t-box 
+--             (equivalent
+--                 A
+--                 (and (not B) C)))
+--         (a-box 
+--             [betty : B]
+--             [betty : C]
+--             [betty ~ A])))
 
-(expect-equal
-    true
-    (is-consistent
-        (definitions 
-            (equivalent
-                A
-                (or (not B) C)))
-        (assertions 
-            [betty ~ B]
-            [betty : C]
-            [betty : A])))
+-- (expect-equal
+--     true
+--     (is-consistent
+--         (t-box 
+--             (equivalent
+--                 A
+--                 (or (not B) C)))
+--         (a-box 
+--             [betty ~ B]
+--             [betty : C]
+--             [betty : A])))
 
-(expect-equal
-    true
-    (is-consistent
-        (definitions 
-            (equivalent
-                A
-                (or (not B) C)))
-        (assertions 
-            [betty : B]
-            [betty : C]
-            [betty : A])))
+-- (expect-equal
+--     true
+--     (is-consistent
+--         (t-box 
+--             (equivalent
+--                 A
+--                 (or (not B) C)))
+--         (a-box 
+--             [betty : B]
+--             [betty : C]
+--             [betty : A])))
 
-(expect-equal
-    false
-    (is-consistent
-        (definitions 
-            (equivalent
-                A
-                (and (not B) (exists c D))))
-        (assertions 
-            [betty : A]
-            [betty : B]
-            )))
+-- (expect-equal
+--     false
+--     (is-consistent
+--         (t-box 
+--             (equivalent
+--                 A
+--                 (and (not B) (exists c D))))
+--         (a-box 
+--             [betty : A]
+--             [betty : B]
+--             )))

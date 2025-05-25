@@ -1,31 +1,31 @@
 (expect-equal
-  (assertions [a b c])
-  (assertions 
+  (a-box [a b c])
+  (a-box 
     { @ a
       b c }))
 
 (expect-equal
-  (assertions [a b c] [a e f])
-  (assertions 
+  (a-box [a b c] [a e f])
+  (a-box 
     { @ a
       b c
       e f }))
   
 (expect-equal
-  (assertions [a : A])
-  (assertions 
+  (a-box [a : A])
+  (a-box 
     { @ a
       : A }))
 
 (expect-equal
-  (assertions [a : A] [a : B])
-  (assertions 
+  (a-box [a : A] [a : B])
+  (a-box 
     { @ a
       : [A B] }))
 
 (expect-equal
-  (assertions [a b c] [c d e])
-  (assertions 
+  (a-box [a b c] [c d e])
+  (a-box 
     { @ a
       b { @ c 
           d e } }))

@@ -1,17 +1,17 @@
 (expect-equal
     (find-model 
-        (definitions) 
-        (assertions)) 
+        (t-box) 
+        (a-box)) 
     {})
 
 (expect-equal
-    (find-model (definitions) (assertions (instance a A)))
+    (find-model (t-box) (a-box (instance a A)))
     { individuals {a { is-a (set [A]) is-not (set []) }} 
       roles (set [])
       attributes (set [])})
 
 (expect-equal
-    (find-model (definitions) (assertions [a b c]))
+    (find-model (t-box) (a-box [a b c]))
     { individuals {
         a { is-a (set []) is-not (set []) }
         c { is-a (set []) is-not (set []) }} 
@@ -19,7 +19,7 @@
       attributes (set [])})
 
 (expect-equal
-    (find-model (definitions) (assertions [a b "c"]))
+    (find-model (t-box) (a-box [a b "c"]))
     { individuals {
         a { is-a (set []) is-not (set []) } }
       roles (set [])

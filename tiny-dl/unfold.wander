@@ -1,23 +1,23 @@
 (expect-equal
-    (assertions)
+    (a-box)
     (unfold
-        (definitions )
-        (assertions )))
+        (t-box )
+        (a-box )))
 
 (expect-equal
-    (assertions (instance a B))
+    (a-box (instance a B))
     (unfold
-        (definitions (equivalent A B))
-        (assertions (instance a A))))
+        (t-box (equivalent A B))
+        (a-box (instance a A))))
 
 (expect-equal
-    (assertions (instance a (and B C)))
+    (a-box (instance a (and B C)))
     (unfold
-        (definitions (equivalent A (and B C)))
-        (assertions (instance a A))))
+        (t-box (equivalent A (and B C)))
+        (a-box (instance a A))))
 
 (expect-equal
-    (assertions [betty ~ Animal] [betty : Animal])
+    (a-box [betty ~ Animal] [betty : Animal])
     (unfold
-        (definitions (implies Cat Animal))
-        (assertions [betty : Cat] [betty ~ Animal])))
+        (t-box (implies Cat Animal))
+        (a-box [betty : Cat] [betty ~ Animal])))

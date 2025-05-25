@@ -1,22 +1,23 @@
 (expect-equal
     false
     (is-consistent
-        (definitions 
+        (t-box 
             (equivalent
                 Member 
                 (exists member-of Group)))
-        (assertions 
+        (a-box 
             [group1 : Group]
             [bob member-of group1] 
             [bob ~ Member])))
 
 -- (expect-equal
+--     "contradiction with unqualified exists and attribute"
 --     false
 --     (is-consistent
---         (definitions 
+--         (t-box 
 --             (equivalent
 --                 Named 
 --                 (exists name)))
---         (assertions 
+--         (a-box 
 --             [bob name "Bob"] 
 --             [bob ~ Named])))

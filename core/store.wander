@@ -16,16 +16,16 @@
   (stores)
   [test test3])
 
-(assert-store test (assertions [a : A]))
+(assert-store test (a-box [a : A]))
 
 -- read-store test
 -- | filter (pattern [?name : B])
--- | expect-equal (assertions [a : B]),
+-- | expect-equal (a-box [a : B]),
 
 -- read-assert-store test
--- | expect-equal (assertions [a : A]),
+-- | expect-equal (a-box [a : A]),
 
--- unassert-store test (assertions [a : A]),
+-- unassert-store test (a-box [a : A]),
 
 -- read-store test
--- | expect-equal (assertions),
+-- | expect-equal (a-box),

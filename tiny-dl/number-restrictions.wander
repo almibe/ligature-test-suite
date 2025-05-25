@@ -1,0 +1,9 @@
+(test-group
+    "number restrictions"
+    (expect-equal
+        "simple call"
+        true
+        (is-consistent
+            (t-box
+                (equivalent A (exactly 1 b C)))
+                (a-box [a : A] [a b c] [c : C]))))

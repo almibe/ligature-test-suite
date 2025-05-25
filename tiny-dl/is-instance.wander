@@ -1,0 +1,19 @@
+(test-group
+    "is-instance tests"
+    (expect-equal
+        "basic is-instance"
+        true
+        (is-instance
+            (t-box )
+            (a-box (instance a A))
+            a
+            A))
+    -- (expect-equal
+    --     "is-instance with disjunction"
+    --     ???
+    --     (is-instance
+    --         (t-box )
+    --         (a-box (instance a (or A B)))
+    --         a
+    --         A))
+        )

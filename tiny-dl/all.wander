@@ -4,18 +4,18 @@
         "basic check"
         false
         (is-consistent
-            (definitions)
-            (assertions (instance a (all b C)) [a b c] [c ~ C])))
+            (t-box)
+            (a-box (instance a (all b C)) [a b c] [c ~ C])))
 
     (expect-equal
         "basic check"
         true
         (is-consistent
-            (definitions 
+            (t-box 
                 (equivalent
                     Person 
                     (all degree-from School)))
-            (assertions 
+            (a-box 
                 [bob degree-from example-university] 
                 [bob : Person]
                 [example-university : School])))
@@ -24,11 +24,11 @@
         ""
         true
         (is-consistent
-            (definitions 
+            (t-box 
                 (equivalent
                     Person 
                     (all degree-from School)))
-            (assertions 
+            (a-box 
                 [bob degree-from example-university] 
                 [bob ~ Person])))
 
@@ -36,11 +36,11 @@
         "example inconsistency with all"
         false
         (is-consistent
-            (definitions 
+            (t-box 
                 (equivalent
                     Member 
                     (all member-of Group)))
-            (assertions 
+            (a-box 
                 [bob : Member]
                 [bob member-of group1] 
                 [group1 ~ Group]))))

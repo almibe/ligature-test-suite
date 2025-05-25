@@ -1,3 +1,3 @@
 (expect-equal
-    (assertions [Bobby sibling Sally] [Sally sibling Bobby])
-    (infer (assertions [sibling : tiny-dl.Is-Symmetrical]) (assertions [Bobby sibling Sally])))
+    (a-box [Bobby sibling Sally] [Sally sibling Bobby])
+    (infer (a-box [sibling : tiny-dl.Is-Symmetrical]) (a-box [Bobby sibling Sally])))
