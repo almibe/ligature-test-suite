@@ -13,7 +13,20 @@
         (is-consistent 
             (t-box)
             (a-box [betty : Cat] [betty ~ Cat])))
-)
+    (expect-equal
+        "clash with conjunction"
+        false
+        (is-consistent
+            (t-box)
+            (a-box (instance a (and A (not A)))))))
+
+
+    -- (expect-equal
+    --     "clash with conjunction and t-box"
+    --     false
+    --     (is-consistent
+    --         (t-box (equivalent A B))
+    --         (a-box (instance a (and A (not B)))))))
 
 
 -- (expect-equal
