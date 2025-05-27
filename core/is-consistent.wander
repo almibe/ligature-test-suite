@@ -18,40 +18,38 @@
         false
         (is-consistent
             (t-box)
-            (a-box (instance a (and A (not A)))))))
+            (a-box (instance a (and A (not A))))))
 
+    (expect-equal
+        "clash with conjunction and t-box"
+        false
+        (is-consistent
+            (t-box (equivalent A B))
+            (a-box (instance a (and A (not B))))))
 
-    -- (expect-equal
-    --     "clash with conjunction and t-box"
-    --     false
-    --     (is-consistent
-    --         (t-box (equivalent A B))
-    --         (a-box (instance a (and A (not B)))))))
+    (expect-equal
+        (is-consistent
+            (t-box)
+            (a-box (instance a (and A B)) (instance a (not B))))
+        false)
 
+    (expect-equal
+        (is-consistent 
+            (t-box)
+            (a-box (instance a (or A B)) (instance a (not A))))
+        true)
 
--- (expect-equal
---     (is-consistent
---         (t-box)
---         (a-box (instance a (and A B)) (instance a (not B))))
---     false)
+    (expect-equal
+        (is-consistent
+            (t-box)
+            (a-box (instance a (not (not A))) (instance a (not A))))
+        false)
 
--- (expect-equal
---     (is-consistent 
---         (t-box)
---         (a-box (instance a (or A B)) (instance a (not A))))
---     true)
-
--- (expect-equal
---     (is-consistent
---         (t-box)
---         (a-box (instance a (not (not A))) (instance a (not A))))
---     false)
-
--- (expect-equal
---     (is-consistent
---         (t-box)
---         (a-box (instance a (or A B)) (instance a (not A)) (instance a (not B))))
---     false)
+    (expect-equal
+        (is-consistent
+            (t-box)
+            (a-box (instance a (or A B)) (instance a (not A)) (instance a (not B))))
+        false)
 
 -- (expect-equal
 --     (is-consistent
@@ -200,3 +198,4 @@
 --             [betty : A]
 --             [betty : B]
 --             )))
+)
