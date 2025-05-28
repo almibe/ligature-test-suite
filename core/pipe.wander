@@ -1,4 +1,6 @@
-(->
-   (a-box [a b c])
-   (count)
-   (expect-equal "1"))
+(test-group
+   "pipe tests"
+   (->
+      (a-box [a b c])
+      (count)
+      (expect-equal "1")))

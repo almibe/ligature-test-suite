@@ -1,3 +1,5 @@
-(expect-equal "0" (count (a-box)))
-(expect-equal "1" (count (a-box [a b c])))
-(expect-equal "2" (count (a-box [a b c] [e : E])))
+(test-group
+    "count tests"
+    (expect-equal "0" (count (a-box)))
+    (expect-equal "1" (count (a-box [a b c])))
+    (expect-equal "2" (count (a-box [a b c] [e : E]))))

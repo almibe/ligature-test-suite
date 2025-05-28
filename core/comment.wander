@@ -1,3 +1,6 @@
--- ignore
-(expect-equal "0" (count (a-box))) -- ignore
--- also ignore
+(test-group
+    "comment tests"
+    -- ignore
+    (expect-equal "0" (count (a-box))) -- ignore
+    -- also ignore
+)

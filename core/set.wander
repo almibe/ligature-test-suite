@@ -1,2 +1,4 @@
-(expect-equal (set []) (set []))
-(expect-equal (set [a a b]) (set [b a]))
+(test-group
+    "set tests"
+    (expect-equal (set []) (set []))
+    (expect-equal (set [a a b]) (set [b a])))

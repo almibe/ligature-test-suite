@@ -1,14 +1,15 @@
-(expect-equal
-    false
-    (is-consistent
-        (t-box 
-            (equivalent
-                Member 
-                (exists member-of Group)))
-        (a-box 
-            [group1 : Group]
-            [bob member-of group1] 
-            [bob ~ Member])))
+(test-group
+    (expect-equal
+        false
+        (is-consistent
+            (t-box 
+                (equivalent
+                    Member 
+                    (exists member-of Group)))
+            (a-box 
+                [group1 : Group]
+                [bob member-of group1] 
+                [bob ~ Member]))))
 
 -- (expect-equal
 --     "contradiction with unqualified exists and attribute"

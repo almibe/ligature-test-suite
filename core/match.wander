@@ -1,5 +1,7 @@
-(expect-equal
-    (match hello
-        hello -> bye
-        bye -> hello)
-    bye)
+(test-group
+    "match tests"
+    (expect-equal
+        (match hello
+            hello -> bye
+            bye -> hello)
+        bye))

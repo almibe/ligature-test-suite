@@ -1,3 +1,0 @@
-(expect-equal 
-    (t-box (implies A B)) 
-    (t-box (implies A B)))

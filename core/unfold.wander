@@ -1,23 +1,25 @@
-(expect-equal
-    (a-box)
-    (unfold
-        (t-box )
-        (a-box )))
+(test-group
+    "unfold tests"
+    (expect-equal
+        (a-box)
+        (unfold
+            (t-box )
+            (a-box )))
 
-(expect-equal
-    (a-box (instance a B))
-    (unfold
-        (t-box (equivalent A B))
-        (a-box (instance a A))))
+    (expect-equal
+        (a-box (instance a B))
+        (unfold
+            (t-box (equivalent A B))
+            (a-box (instance a A))))
 
-(expect-equal
-    (a-box (instance a (and B C)))
-    (unfold
-        (t-box (equivalent A (and B C)))
-        (a-box (instance a A))))
+    (expect-equal
+        (a-box (instance a (and B C)))
+        (unfold
+            (t-box (equivalent A (and B C)))
+            (a-box (instance a A))))
 
-(expect-equal
-    (a-box [betty ~ Animal] [betty : Animal])
-    (unfold
-        (t-box (implies Cat Animal))
-        (a-box [betty : Cat] [betty ~ Animal])))
+    (expect-equal
+        (a-box [betty ~ Animal] [betty : Animal])
+        (unfold
+            (t-box (implies Cat Animal))
+            (a-box [betty : Cat] [betty ~ Animal]))))
