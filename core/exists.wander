@@ -1,4 +1,5 @@
 (test-group
+    "exists tests"
     (expect-equal
         false
         (is-consistent
