@@ -1,0 +1,6 @@
+(test-group
+    "fn tests"
+    (expect-equal
+        "id fn"
+        (fn [$a] $a)
+        (fn [$a] $a)))

@@ -1,0 +1,12 @@
+(test-group
+    "nominals tests"
+    (expect-equal
+        true
+        (is-consistent
+            (t-box (equivalent Handedness (nominals left right mixed)))
+            (a-box (instance left Handedness))))
+    (expect-equal
+        false
+        (is-consistent
+            (t-box (equivalent Handedness (nominals left right mixed)))
+            (a-box (instance left (not Handedness))))))
