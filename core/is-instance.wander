@@ -1,19 +1,42 @@
 (test-group
     "is-instance tests"
-    -- (expect-equal
-        -- "basic is-instance"
-        -- true
-        -- (is-instance
-        --     (t-box )
-        --     (a-box (instance a A))
-        --     a
-        --     A))
-    -- (expect-equal
-    --     "is-instance with disjunction"
-    --     ???
-    --     (is-instance
-    --         (t-box )
-    --         (a-box (instance a (or A B)))
-    --         a
-    --         A))
-        )
+    (expect-equal
+        "empty is-instance"
+        false
+        (is-instance
+            (t-box )
+            (a-box )
+            a
+            A))
+    (expect-equal
+        "basic is-instance"
+        true
+        (is-instance
+            (t-box )
+            (a-box (instance a A))
+            a
+            A))
+    (expect-equal
+        "basic is-instance, unknown"
+        false
+        (is-instance
+            (t-box )
+            (a-box (instance a A))
+            a
+            B))
+    (expect-equal
+        "basic is-instance, false"
+        false
+        (is-instance
+            (t-box )
+            (a-box (instance a (not A)))
+            a
+            A))
+    (expect-equal
+        "is-instance with disjunction"
+        unknown
+        (is-instance
+            (t-box )
+            (a-box (instance a (or A B)))
+            a
+            A)))

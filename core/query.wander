@@ -5,42 +5,33 @@
         (query
             (t-box)
             (a-box)
-            (top ))
-        []))
-
-    -- (expect-equal
-    --     (query
-    --         (t-box)
-    --         (a-box (instance betty Cat))
-    --         Cat)
-    --     [{betty }]))
-
--- (test-group
---     "query tests"
---     (expect-equal
---     "basic query"
---     (query 
---         (t-box ) 
---         (a-box (instance kim Person)) 
---         (q (instance ?a Person)))
---     true))
-
--- (expect-equal
---     (query (pattern) (a-box))
---     (result-set []))
-
--- (expect-equal
---     (query (pattern [?a ?b ?c]) (a-box [a b c]))
---     (result-set [{?a a ?b b ?c c}]))
-
--- (expect-equal
---     (query (pattern [?a b c]) (a-box [d b c]))
---     (result-set [{?a d}]))
-
--- (expect-equal
---     (query (pattern [?a d c]) (a-box [a b c]))
---     (result-set []))
-
--- (expect-equal
---     (query (pattern [?a b ?c]) (a-box [q b c] [a c c] [a b c]))
---     (result-set [{?a q ?c c} {?a a ?c c}]))
+            (top ) [])
+        [])
+    (expect-equal
+        "simple a-box query"
+        (query
+            (t-box)
+            (a-box (instance betty Cat))
+            Cat [])
+        [{betty }])
+    (expect-equal
+        "simple a-box query with multiple matches"
+        (query
+            (t-box)
+            (a-box (instance betty Cat) (instance peggy Cat))
+            Cat [])
+        [{betty } { peggy }])
+    (expect-equal
+        "simple a-box query with multiple matches and a non-match"
+        (query
+            (t-box)
+            (a-box (instance betty Cat) (instance peggy Cat) (instance megan Dog) [betty name "Betty"])
+            Cat [])
+        [{betty } { peggy }])
+    (expect-equal
+        "simple t-box query with attribute"
+        (query
+            (t-box )
+            (a-box (instance betty Cat) [betty name "Betty"])
+            Cat [name])
+        [{betty name = "Betty" }]))
