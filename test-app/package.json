@@ -23,6 +23,7 @@
 	},
 	"dependencies": {
 		"@ligature/ligature": "file:../../ligature-fs/src/LigatureFable",
-		"@ligature/ligature-components": "file:../../ligature-components/packages/ligature-components"
+		"@ligature/ligature-components": "file:../../ligature-components/packages/ligature-components",
+		"glob": "^11.0.2"
 	}
 }
