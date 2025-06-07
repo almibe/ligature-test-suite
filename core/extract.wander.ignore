@@ -1,7 +1,0 @@
-(expect-equal
-    { @ betty : Cat }
-    (extract betty (a-box [betty : Cat])))
-
--- expect-equal
---     { @ betty : Cat name "Betty" }
---     (extract betty (a-box [betty : Cat] [betty name "Betty"] [bob : Dog])),

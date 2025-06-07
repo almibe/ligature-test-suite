@@ -1,0 +1,29 @@
+(test-group
+    "find-model tests"
+    (expect-equal
+        "empty kb"
+        (find-model 
+            (t-box) 
+            (a-box)) 
+        (a-box)))
+
+-- (expect-equal
+--     (find-model (t-box) (a-box (instance a A)))
+--     { individuals {a { is-a (set [A]) is-not (set []) }} 
+--       roles (set [])
+--       attributes (set [])})
+
+-- (expect-equal
+--     (find-model (t-box) (a-box [a b c]))
+--     { individuals {
+--         a { is-a (set []) is-not (set []) }
+--         c { is-a (set []) is-not (set []) }} 
+--       roles (set [[a b c]])
+--       attributes (set [])})
+
+-- (expect-equal
+--     (find-model (t-box) (a-box [a b "c"]))
+--     { individuals {
+--         a { is-a (set []) is-not (set []) } }
+--       roles (set [])
+--       attributes (set [[a b "c"]])})
