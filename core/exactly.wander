@@ -1,0 +1,14 @@
+(test-group
+    "exactly tests"
+    (expect-equal
+        "allow for two names to refer to same individual"
+        true
+        (is-consistent
+            (t-box 
+                (equivalent
+                    SingleChildParent 
+                    (exactly 1 parent-of)))
+            (a-box 
+                [a parent-of b]
+                [a parent-of c] 
+                [a : SingleChildParent]))))

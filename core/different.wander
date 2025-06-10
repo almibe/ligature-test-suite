@@ -1,0 +1,14 @@
+(test-group
+    "different tests"
+    (expect-equal
+        "basic different test"
+        true
+        (is-consistent
+            (t-box )
+            (a-box (different a b))))
+    (expect-equal
+        "basic inconsistency with differnt"
+        false
+        (is-consistent
+            (t-box)
+            (a-box (different a a)))))
