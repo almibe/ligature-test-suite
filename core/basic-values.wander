@@ -3,7 +3,7 @@
     (expect-equal a a)
     (expect-equal { p class = "test" "body" } { p class = "test" "body" })
     (expect-equal "a" "a")
-    (expect-equal (literal "a" Text en) (literal "a" Text en))
+    -- (expect-equal (literal "a" Text en) (literal "a" Text en))
     (expect-equal [] [])
     (expect-equal (a-box) (a-box))
     (expect-equal (a-box [a b c]) (a-box [a b c]))

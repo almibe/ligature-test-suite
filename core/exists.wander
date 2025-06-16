@@ -10,16 +10,15 @@
             (a-box 
                 [group1 : Group]
                 [bob member-of group1] 
-                [bob ~ Member]))))
-
--- (expect-equal
---     "contradiction with unqualified exists and attribute"
---     false
---     (is-consistent
---         (t-box 
---             (equivalent
---                 Named 
---                 (exists name)))
---         (a-box 
---             [bob name "Bob"] 
---             [bob ~ Named])))
+                [bob ~ Member])))
+    (expect-equal
+        "contradiction with unqualified exists and attribute"
+        false
+        (is-consistent
+            (t-box 
+                (equivalent
+                    Named 
+                    (exists name)))
+            (a-box 
+                [bob name "Bob"] 
+                [bob ~ Named]))))
