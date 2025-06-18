@@ -1,0 +1,46 @@
+test-group(
+    "all constructor tests"
+    expect-equal(
+        "basic check"
+        false
+        is-consistent(
+            t-box()
+            a-box (instance (a all (b C)) [a b c] [c ~ C])))
+
+    expect-equal(
+        "basic check"
+        true
+        is-consistent(
+            t-box( 
+                equivalent(
+                    Person 
+                    all (degree-from School)))
+            a-box( 
+                [bob degree-from example-university] 
+                [bob : Person]
+                [example-university : School])))
+
+    expect-equal(
+        ""
+        true
+        is-consistent(
+            t-box( 
+                equivalent(
+                    Person 
+                    all(degree-from School)))
+            a-box( 
+                [bob degree-from example-university] 
+                [bob ~ Person])))
+
+    expect-equal(
+        "example inconsistency with all"
+        false
+        is-consistent(
+            t-box( 
+                equivalent(
+                    Member 
+                    all(member-of Group)))
+            a-box( 
+                [bob : Member]
+                [bob member-of group1] 
+                [group1 ~ Group]))))
