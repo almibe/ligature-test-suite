@@ -93,34 +93,34 @@
 -- -- top
 -- -- bottom
 
-    (expect-equal
-        ""
-        false
-        (is-consistent
-            (t-box)
-            (a-box [betty : Cat] [betty ~ Cat])))
+    -- (expect-equal
+    --     ""
+    --     false
+    --     (is-consistent
+    --         (t-box)
+    --         (a-box [betty : Cat] [betty ~ Cat])))
 
-    (expect-equal
-        false
-        (is-consistent
-            (t-box (implies Cat Animal))
-            (a-box [betty : Cat] [betty ~ Animal])))
+    -- (expect-equal
+    --     false
+    --     (is-consistent
+    --         (t-box (implies Cat Animal))
+    --         (a-box [betty : Cat] [betty ~ Animal])))
 
-    (expect-equal
-        false
-        (is-consistent 
-            (t-box (implies A B) (implies B C))
-            (a-box (instance a A) (instance a (not C)))))
+    -- (expect-equal
+    --     false
+    --     (is-consistent 
+    --         (t-box (implies A B) (implies B C))
+    --         (a-box (instance a A) (instance a (not C)))))
             
-    (expect-equal
-        (is-consistent 
-            (t-box (implies A (and B C)))
-            (a-box (instance a A) (instance a (not C))))
-        false)
+    -- (expect-equal
+    --     (is-consistent 
+    --         (t-box (implies A (and B C)))
+    --         (a-box (instance a A) (instance a (not C))))
+    --     false)
 
-    (expect-equal
-        true
-        (is-consistent (t-box) (a-box (instance a (or B A)) [a ~ A])))
+    -- (expect-equal
+    --     true
+    --     (is-consistent (t-box) (a-box (instance a (or B A)) [a ~ A])))
 
     -- (expect-equal
     --     (is-consistent

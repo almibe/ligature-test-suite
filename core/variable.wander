@@ -1,0 +1,9 @@
+$x = "Hello"
+
+test-group (
+    "test group"
+    expect-equal ( 
+        "test variables"
+        $x "Hello" 
+    )
+)

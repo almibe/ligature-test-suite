@@ -1,5 +1,5 @@
-(test-group
+test-group (
     "union tests"
-    (expect-equal
-        (union (a-box [a b c]) (a-box [d e f]))
-        (a-box [a b c] [d e f])))
+    expect-equal (
+        union (a-box ([a b c]) a-box ([d e f]))
+        a-box ([a b c] [d e f])))
