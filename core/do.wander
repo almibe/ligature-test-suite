@@ -1,0 +1,6 @@
+test-group(
+    "do tests"
+    expect-equal(
+        "basic do"
+        do (test)
+        test))

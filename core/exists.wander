@@ -1,24 +1,24 @@
-(test-group
+test-group(
     "exists tests"
-    (expect-equal
+    expect-equal(
         false
-        (is-consistent
-            (t-box 
-                (equivalent
+        is-consistent(
+            t-box( 
+                equivalent(
                     Member 
-                    (exists member-of Group)))
-            (a-box 
+                    exists( member-of Group)))
+            a-box( 
                 [group1 : Group]
                 [bob member-of group1] 
                 [bob ~ Member])))
-    (expect-equal
+    expect-equal(
         "contradiction with unqualified exists and attribute"
         false
-        (is-consistent
-            (t-box 
-                (equivalent
+        is-consistent(
+            t-box( 
+                equivalent(
                     Named 
-                    (exists name)))
-            (a-box 
+                    exists (name)))
+            a-box( 
                 [bob name "Bob"] 
                 [bob ~ Named]))))

@@ -1,0 +1,6 @@
+test-group(
+    "lambda tests"
+    expect-equal(
+        "id fn"
+        lambda ( $a -> $a)
+        lambda ( $a -> $a)))

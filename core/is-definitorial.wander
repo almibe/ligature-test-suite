@@ -1,0 +1,41 @@
+test-group(
+    "is-definitorial tests"
+    expect-equal(
+        true
+        is-definitorial(
+            t-box()))
+
+    expect-equal(
+        true
+        is-definitorial( 
+            t-box ( equivalent (A B ))))
+        
+    expect-equal(
+        true
+        is-definitorial(
+            t-box (equivalent (A and (B C)))))
+                
+    expect-equal(
+        false
+        is-definitorial( 
+            t-box ( equivalent (A C )  equivalent (A B ))))
+
+    expect-equal(
+        false
+        is-definitorial( 
+            t-box ( equivalent (A B )  equivalent (B A ))))
+
+    expect-equal(
+        false
+        is-definitorial( 
+            t-box ( equivalent (A B )  equivalent (B C )  equivalent (C A ))))
+
+    expect-equal(
+        true
+        is-definitorial( 
+            t-box ( equivalent (A B )  equivalent (B C )  equivalent (C D ))))
+
+    expect-equal(
+        false
+        is-definitorial( 
+            t-box ( equivalent (A B )  equivalent (B C )  equivalent (C or (D A) )))))
