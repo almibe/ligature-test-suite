@@ -7,3 +7,29 @@ test-group (
         $x "Hello" 
     )
 )
+
+-- (let $x (a-box [a b c]))
+
+-- (expect-equal
+--     (a-box {@ a b c})
+--     $x)
+
+-- (let $y (a-box [a b c]))
+
+-- (expect-equal $y $x)
+
+-- (let $x 5)
+
+-- (expect-equal [$x] [5])
+
+-- (defn wrap [$a] [$a])
+
+-- (expect-equal 
+--     (wrap 55)
+--     [55])
+
+-- (defn wrap-twice [$a] [[$a]])
+
+-- (expect-equal 
+--     (wrap-twice 55)
+--     [[55]])

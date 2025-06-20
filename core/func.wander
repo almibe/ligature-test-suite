@@ -1,0 +1,27 @@
+test-group(
+    "func tests"
+    expect-equal(
+        "basic test"
+        true
+        is-consistent(
+            t-box (equivalent (A func (a)))
+            a-box ([x a b] instance (x A))))
+    expect-equal(
+        "allow multiple expressions of the same individual"
+        true
+        is-consistent(
+            t-box (equivalent (A func (a)))
+            a-box ([x a b] [x a c] instance (x A))))
+    expect-equal(
+        "don't allow multiple instances"
+        false
+        is-consistent(
+            t-box (equivalent (A func (a)))
+            a-box ([x a b] [x a c] different (b c) instance (x A))))
+
+    expect-equal(
+        "not func test"
+        true
+        is-consistent(
+            t-box (equivalent (A func (a)))
+            a-box ([x a b] instance (x not (A))))))

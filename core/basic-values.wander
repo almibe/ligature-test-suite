@@ -5,6 +5,7 @@ test-group (
     expect-equal ("a" "a")
     -- (expect-equal (literal "a" Text en) (literal "a" Text en))
     expect-equal ([] [])
+    expect-equal ("empty sets" set () set ())
     expect-equal (a-box() a-box())
     expect-equal (a-box ([a b c]) a-box ([a b c]))
     expect-equal (a-box ([a b c] [d e f]) a-box ([d e f] [a b c]))

@@ -1,0 +1,25 @@
+test-group (
+  "a-box specs"
+  expect-equal(
+    a-box ([a b c])
+    a-box( 
+      a { [b c] }))
+
+  expect-equal(
+    a-box ([a b c] [a e f])
+    a-box ( a { [b c] [e f] }))
+    
+  expect-equal(
+    a-box (instance (a A))
+    a-box (a { A }))
+
+  expect-equal(
+    a-box ([a : A] [a : B])
+    a-box ( a { A B }))
+
+  expect-equal(
+    a-box ([a b c] [c d e])
+    a-box (
+        a {
+            [ b c { 
+                [d e] }]})))

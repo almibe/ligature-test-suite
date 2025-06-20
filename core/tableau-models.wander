@@ -1,0 +1,29 @@
+test-group(
+    "tableau-models tests"
+    expect-equal(
+        "empty kb"
+        tableau-models(
+            t-box() 
+            a-box()) 
+        set (a-box()))
+
+    expect-equal(
+        "single instance"
+        tableau-models (
+            t-box() 
+            a-box(instance (a A)))
+        set(a-box(instance (a A))))
+
+    expect-equal(
+        "single role"
+        tableau-models (
+            t-box() 
+            a-box ([a b c]))
+        set(a-box([a b c])))
+
+    expect-equal(
+        "single role"
+        tableau-models (
+            t-box() 
+            a-box ([a b "c"]))
+        set(a-box([a b "c"]))))
