@@ -3,11 +3,11 @@ test-group(
     expect-equal(
         false
         is-consistent(
-            t-box( 
+            definitions( 
                 equivalent(
                     Member 
                     exists( member-of Group)))
-            a-box( 
+            assertions( 
                 [group1 : Group]
                 [bob member-of group1] 
                 [bob ~ Member])))
@@ -15,10 +15,10 @@ test-group(
         "contradiction with unqualified exists and attribute"
         false
         is-consistent(
-            t-box( 
+            definitions( 
                 equivalent(
                     Named 
                     exists (name)))
-            a-box( 
+            assertions( 
                 [bob name "Bob"] 
                 [bob ~ Named]))))

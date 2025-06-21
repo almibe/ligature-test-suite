@@ -3,35 +3,35 @@
     (expect-equal
         "empty query"
         (query
-            (t-box)
-            (a-box)
+            (definitions)
+            (assertions)
             (top ) [])
         [])
     (expect-equal
-        "simple a-box query"
+        "simple assertions query"
         (query
-            (t-box)
-            (a-box (instance betty Cat))
+            (definitions)
+            (assertions (instance betty Cat))
             Cat [])
         [{betty }])
     (expect-equal
-        "simple a-box query with multiple matches"
+        "simple assertions query with multiple matches"
         (query
-            (t-box)
-            (a-box (instance betty Cat) (instance peggy Cat))
+            (definitions)
+            (assertions (instance betty Cat) (instance peggy Cat))
             Cat [])
         [{betty } { peggy }])
     (expect-equal
-        "simple a-box query with multiple matches and a non-match"
+        "simple assertions query with multiple matches and a non-match"
         (query
-            (t-box)
-            (a-box (instance betty Cat) (instance peggy Cat) (instance megan Dog) [betty name "Betty"])
+            (definitions)
+            (assertions (instance betty Cat) (instance peggy Cat) (instance megan Dog) [betty name "Betty"])
             Cat [])
         [{betty } { peggy }])
     (expect-equal
-        "simple t-box query with attribute"
+        "simple definitions query with attribute"
         (query
-            (t-box )
-            (a-box (instance betty Cat) [betty name "Betty"])
+            (definitions )
+            (assertions (instance betty Cat) [betty name "Betty"])
             Cat [name])
         [{betty name = "Betty" }]))

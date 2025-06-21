@@ -1,6 +1,6 @@
 test-group (
     "comment tests"
     -- ignore
-    expect-equal ("0" count (a-box())) -- ignore
+    expect-equal ("0" count (assertions())) -- ignore
     -- also ignore
 )

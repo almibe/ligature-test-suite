@@ -4,90 +4,90 @@ test-group(
         "single instance"
         true 
         is-consistent( 
-            t-box()
-            a-box ([betty : Cat])))
+            definitions()
+            assertions ([betty : Cat])))
 
     expect-equal(
         "simple direct clash"
         false
         is-consistent( 
-            t-box()
-            a-box ([betty : Cat] [betty ~ Cat])))
+            definitions()
+            assertions ([betty : Cat] [betty ~ Cat])))
     expect-equal(
         "clash with conjunction"
         false
         is-consistent(
-            t-box()
-            a-box (instance (a and (A not (A))))))
+            definitions()
+            assertions (instance (a and (A not (A))))))
 
     expect-equal(
-        "clash with conjunction and t-box"
+        "clash with conjunction and definitions"
         false
         is-consistent(
-            t-box (equivalent (A B))
-            a-box (instance (a and (A not (B))))))
+            definitions (equivalent (A B))
+            assertions (instance (a and (A not (B))))))
 
     expect-equal(
         "conjunction and negation"
         is-consistent(
-            t-box()
-            a-box (instance (a and (A B)) instance (a not (B))))
+            definitions()
+            assertions (instance (a and (A B)) instance (a not (B))))
         false)
 
     expect-equal(
         "disjunction and negation"
         is-consistent( 
-            t-box()
-            a-box (instance (a or (A B)) instance (a not (A))))
+            definitions()
+            assertions (instance (a or (A B)) instance (a not (A))))
         true)
 
     expect-equal(
         "double negation"
         is-consistent(
-            t-box()
-            a-box (instance (a not (not (A))) instance (a not (A))))
+            definitions()
+            assertions (instance (a not (not (A))) instance (a not (A))))
         false)
 
     expect-equal(
         "disjunction with two negations"
         is-consistent(
-            t-box()
-            a-box (instance (a or (A B)) instance (a not (A)) instance (a not (B))))
+            definitions()
+            assertions (instance (a or (A B)) instance (a not (A)) instance (a not (B))))
         false)
 
     expect-equal(
         "combining disjunction and conjunction"
         is-consistent(
-            t-box()
-            a-box (instance (a or (A B)) instance (a not (and (A B)))))
+            definitions()
+            assertions (instance (a or (A B)) instance (a not (and (A B)))))
         true)
 
     expect-equal(
         "disjunction and negation"
         is-consistent(
-            t-box()
-            a-box (instance (a or (A B)) instance (a not (or (A B)))))
+            definitions()
+            assertions (instance (a or (A B)) instance (a not (or (A B)))))
         false)
 
     expect-equal(
         "basic exists"
         is-consistent( 
-            t-box()
-            a-box (instance (a exists (b C))))
+            definitions()
+            assertions (instance (a exists (b C))))
         true)
 
     expect-equal(
         "basic all"
         is-consistent( 
-            t-box()
-            a-box (instance (a all (b C))))
+            definitions()
+            assertions (instance (a all (b C))))
         true)
 
     expect-equal(
         "all with negation"
         is-consistent( 
-            t-box()
-            a-box (instance (a all (b C)) [a b c] [c ~ C]))
+            definitions()
+            assertions (instance (a all (b C)) [a b c] [c ~ C]))
         false)
 
     -- top
@@ -97,35 +97,35 @@ test-group(
         ""
         false
         is-consistent(
-            t-box()
-            a-box ([betty : Cat] [betty ~ Cat])))
+            definitions()
+            assertions ([betty : Cat] [betty ~ Cat])))
 
     expect-equal(
         false
         is-consistent(
-            t-box (implies (Cat Animal))
-            a-box ([betty : Cat] [betty ~ Animal])))
+            definitions (implies (Cat Animal))
+            assertions ([betty : Cat] [betty ~ Animal])))
 
     expect-equal(
         false
         is-consistent( 
-            t-box (implies (A B) implies (B C))
-            a-box (instance (a A) instance (a not (C)))))
+            definitions (implies (A B) implies (B C))
+            assertions (instance (a A) instance (a not (C)))))
 
     expect-equal(
         is-consistent( 
-            t-box (implies (A and (B C)))
-            a-box (instance (a A) instance (a not (C))))
+            definitions (implies (A and (B C)))
+            assertions (instance (a A) instance (a not (C))))
         false)
 
     expect-equal(
         true
-        is-consistent (t-box() a-box (instance (a or (B A)) [a ~ A])))
+        is-consistent (definitions() assertions (instance (a or (B A)) [a ~ A])))
 
     expect-equal(
         is-consistent(
-            t-box()
-            a-box (
+            definitions()
+            assertions (
                 [betty : Plant]
                 [betty : Carnivore]
                 instance (betty or (not (Plant) not (Carnivore)))))
@@ -134,8 +134,8 @@ test-group(
     expect-equal(
         false
         is-consistent(
-            t-box()
-            a-box( 
+            definitions()
+            assertions( 
                 [betty : Plant]
                 [betty : Carnivore]
                 instance (betty not (and (Plant Carnivore))))))
@@ -143,20 +143,20 @@ test-group(
     expect-equal(
         false
         is-consistent(
-            t-box 
+            definitions 
                 (equivalent (Dog Doggo))
-            a-box(
+            assertions(
                 instance (megan Dog)
                 instance (megan not (Doggo)))))
 
     expect-equal(
         false
         is-consistent(
-            t-box( 
+            definitions( 
                 equivalent(
                     CarnivorousPlant
                     and( Plant Carnivore)))
-            a-box( 
+            assertions( 
                 [betty : Plant]
                 [betty : Carnivore]
                 [betty ~ CarnivorousPlant])))
@@ -164,11 +164,11 @@ test-group(
     expect-equal(
         true
         is-consistent(
-            t-box( 
+            definitions( 
                 equivalent(
                     A
                     and( not( B) C)))
-            a-box( 
+            assertions( 
                 [betty : B]
                 [betty : C]
                 [betty ~ A])))
@@ -176,11 +176,11 @@ test-group(
     expect-equal(
         true
         is-consistent(
-            t-box( 
+            definitions( 
                 equivalent(
                     A
                     or( not( B) C)))
-            a-box( 
+            assertions( 
                 [betty ~ B]
                 [betty : C]
                 [betty : A])))
@@ -188,11 +188,11 @@ test-group(
     expect-equal(
         true
         is-consistent(
-            t-box( 
+            definitions( 
                 equivalent(
                     A
                     or( not( B) C)))
-            a-box( 
+            assertions( 
                 [betty : B]
                 [betty : C]
                 [betty : A])))
@@ -200,10 +200,10 @@ test-group(
     expect-equal(
         false
         is-consistent(
-            t-box (
+            definitions (
                 equivalent(
                     A
                     and (not (B) exists (c D))))
-            a-box( 
+            assertions( 
                 [betty : A]
                 [betty : B] ))))

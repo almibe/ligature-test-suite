@@ -3,27 +3,27 @@ test-group(
     expect-equal(
         "empty kb"
         tableau-models(
-            t-box() 
-            a-box()) 
-        set (a-box()))
+            definitions() 
+            assertions()) 
+        set (assertions()))
 
     expect-equal(
         "single instance"
         tableau-models (
-            t-box() 
-            a-box(instance (a A)))
-        set(a-box(instance (a A))))
+            definitions() 
+            assertions(instance (a A)))
+        set(assertions(instance (a A))))
 
     expect-equal(
         "single role"
         tableau-models (
-            t-box() 
-            a-box ([a b c]))
-        set(a-box([a b c])))
+            definitions() 
+            assertions ([a b c]))
+        set(assertions([a b c])))
 
     expect-equal(
         "single role"
         tableau-models (
-            t-box() 
-            a-box ([a b "c"]))
-        set(a-box([a b "c"]))))
+            definitions() 
+            assertions ([a b "c"]))
+        set(assertions([a b "c"]))))

@@ -4,6 +4,6 @@
         "simple call"
         true
         (is-consistent
-            (t-box
+            (definitions
                 (equivalent A (exactly 1 b C)))
-                (a-box [a : A] [a b c] [c : C]))))
+                (assertions [a : A] [a b c] [c : C]))))

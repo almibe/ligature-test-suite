@@ -4,11 +4,11 @@ test-group(
         "basic same test"
         true
         is-consistent(
-            t-box ()
-            a-box (same (a b))))
+            definitions ()
+            assertions (same (a b))))
     expect-equal(
         "basic inconsistency with same and different"
         false
         is-consistent(
-            t-box()
-            a-box (same (a b) different (a b)))))
+            definitions()
+            assertions (same (a b) different (a b)))))

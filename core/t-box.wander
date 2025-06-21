@@ -1,18 +1,18 @@
 test-group(
-    "t-box tests"
+    "definitions tests"
     expect-equal( 
-        t-box ()
-        t-box ())
+        definitions ()
+        definitions ())
 
     expect-equal( 
-        t-box (A )
-        t-box (A ))
+        definitions (A )
+        definitions (A ))
         
 
     expect-equal( 
-        t-box (A B C)
-        t-box (A B C))
+        definitions (A B C)
+        definitions (A B C))
 
     expect-equal( 
-        t-box (implies (A B) or (C D))
-        t-box (implies (A B) or (C D))))
+        definitions (implies (A B) or (C D))
+        definitions (implies (A B) or (C D))))

@@ -4,39 +4,39 @@ test-group(
         "empty is-instance"
         false
         is-instance(
-            t-box ()
-            a-box ()
+            definitions ()
+            assertions ()
             a
             A))
     expect-equal(
         "basic is-instance"
         true
         is-instance(
-            t-box ()
-            a-box (instance (a A))
+            definitions ()
+            assertions (instance (a A))
             a
             A))
     expect-equal(
         "basic is-instance, unknown"
         false
         is-instance(
-            t-box ()
-            a-box (instance (a A))
+            definitions ()
+            assertions (instance (a A))
             a
             B))
     expect-equal(
         "basic is-instance, false"
         false
         is-instance(
-            t-box ()
-            a-box (instance (a not (A)))
+            definitions ()
+            assertions (instance (a not (A)))
             a
             A))
     expect-equal(
         "is-instance with disjunction"
         unknown
         is-instance(
-            t-box ()
-            a-box (instance (a or(A B)))
+            definitions ()
+            assertions (instance (a or(A B)))
             a
             A)))

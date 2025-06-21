@@ -8,13 +8,13 @@ test-group (
     )
 )
 
--- (let $x (a-box [a b c]))
+-- (let $x (assertions [a b c]))
 
 -- (expect-equal
---     (a-box {@ a b c})
+--     (assertions {@ a b c})
 --     $x)
 
--- (let $y (a-box [a b c]))
+-- (let $y (assertions [a b c]))
 
 -- (expect-equal $y $x)
 

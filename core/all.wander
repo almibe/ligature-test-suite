@@ -4,18 +4,18 @@ test-group(
         "basic check"
         false
         is-consistent(
-            t-box()
-            a-box (instance (a all (b C)) [a b c] [c ~ C])))
+            definitions()
+            assertions (instance (a all (b C)) [a b c] [c ~ C])))
 
     expect-equal(
         "basic check"
         true
         is-consistent(
-            t-box( 
+            definitions( 
                 equivalent(
                     Person 
                     all (degree-from School)))
-            a-box( 
+            assertions( 
                 [bob degree-from example-university] 
                 [bob : Person]
                 [example-university : School])))
@@ -24,11 +24,11 @@ test-group(
         ""
         true
         is-consistent(
-            t-box( 
+            definitions( 
                 equivalent(
                     Person 
                     all(degree-from School)))
-            a-box( 
+            assertions( 
                 [bob degree-from example-university] 
                 [bob ~ Person])))
 
@@ -36,11 +36,11 @@ test-group(
         "example inconsistency with all"
         false
         is-consistent(
-            t-box( 
+            definitions( 
                 equivalent(
                     Member 
                     all(member-of Group)))
-            a-box( 
+            assertions( 
                 [bob : Member]
                 [bob member-of group1] 
                 [group1 ~ Group]))))

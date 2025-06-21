@@ -3,39 +3,39 @@ test-group(
     expect-equal(
         true
         is-definitorial(
-            t-box()))
+            definitions()))
 
     expect-equal(
         true
         is-definitorial( 
-            t-box ( equivalent (A B ))))
+            definitions ( equivalent (A B ))))
         
     expect-equal(
         true
         is-definitorial(
-            t-box (equivalent (A and (B C)))))
+            definitions (equivalent (A and (B C)))))
                 
     expect-equal(
         false
         is-definitorial( 
-            t-box ( equivalent (A C )  equivalent (A B ))))
+            definitions ( equivalent (A C )  equivalent (A B ))))
 
     expect-equal(
         false
         is-definitorial( 
-            t-box ( equivalent (A B )  equivalent (B A ))))
+            definitions ( equivalent (A B )  equivalent (B A ))))
 
     expect-equal(
         false
         is-definitorial( 
-            t-box ( equivalent (A B )  equivalent (B C )  equivalent (C A ))))
+            definitions ( equivalent (A B )  equivalent (B C )  equivalent (C A ))))
 
     expect-equal(
         true
         is-definitorial( 
-            t-box ( equivalent (A B )  equivalent (B C )  equivalent (C D ))))
+            definitions ( equivalent (A B )  equivalent (B C )  equivalent (C D ))))
 
     expect-equal(
         false
         is-definitorial( 
-            t-box ( equivalent (A B )  equivalent (B C )  equivalent (C or (D A) )))))
+            definitions ( equivalent (A B )  equivalent (B C )  equivalent (C or (D A) )))))

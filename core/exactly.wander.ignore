@@ -4,11 +4,11 @@
         "allow for two names to refer to same individual"
         true
         (is-consistent
-            (t-box 
+            (definitions 
                 (equivalent
                     SingleChildParent 
                     (exactly 1 parent-of)))
-            (a-box 
+            (assertions 
                 [a parent-of b]
                 [a parent-of c] 
                 [a : SingleChildParent]))))

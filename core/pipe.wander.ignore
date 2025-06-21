@@ -1,6 +1,6 @@
 (test-group
    "pipe tests"
    (->
-      (a-box [a b c])
+      (assertions [a b c])
       (count)
       (expect-equal "1")))

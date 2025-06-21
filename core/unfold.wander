@@ -1,25 +1,25 @@
 test-group(
     "unfold tests"
     expect-equal(
-        a-box()
+        assertions()
         unfold(
-            t-box ()
-            a-box ()))
+            definitions ()
+            assertions ()))
 
     expect-equal(
-        a-box (instance (a B))
+        assertions (instance (a B))
         unfold(
-            t-box (equivalent (A B))
-            a-box (instance (a A))))
+            definitions (equivalent (A B))
+            assertions (instance (a A))))
 
     expect-equal(
-        a-box (instance (a and (B C)))
+        assertions (instance (a and (B C)))
         unfold(
-            t-box (equivalent (A and (B C)))
-            a-box (instance (a A))))
+            definitions (equivalent (A and (B C)))
+            assertions (instance (a A))))
 
     expect-equal(
-        a-box ([betty ~ Animal] [betty : Animal])
+        assertions ([betty ~ Animal] [betty : Animal])
         unfold(
-            t-box (implies (Cat Animal))
-            a-box ([betty : Cat] [betty ~ Animal]))))
+            definitions (implies (Cat Animal))
+            assertions ([betty : Cat] [betty ~ Animal]))))
