@@ -140,72 +140,70 @@ test-group(
                 [betty : Carnivore]
                 instance (betty not (and (Plant Carnivore))))))
 
-    -- (expect-equal
-    --     false
-    --     (is-consistent
-    --         (t-box 
-    --             (equivalent Dog Doggo))
-    --         (a-box 
-    --             (instance megan Dog)
-    --             (instance megan (not Doggo)))))
+    expect-equal(
+        false
+        is-consistent(
+            t-box 
+                (equivalent (Dog Doggo))
+            a-box(
+                instance (megan Dog)
+                instance (megan not (Doggo)))))
 
-    -- (expect-equal
-    --     false
-    --     (is-consistent
-    --         (t-box 
-    --             (equivalent
-    --                 CarnivorousPlant
-    --                 (and Plant Carnivore)))
-    --         (a-box 
-    --             [betty : Plant]
-    --             [betty : Carnivore]
-    --             [betty ~ CarnivorousPlant])))
+    expect-equal(
+        false
+        is-consistent(
+            t-box( 
+                equivalent(
+                    CarnivorousPlant
+                    and( Plant Carnivore)))
+            a-box( 
+                [betty : Plant]
+                [betty : Carnivore]
+                [betty ~ CarnivorousPlant])))
 
-    -- (expect-equal
-    --     true
-    --     (is-consistent
-    --         (t-box 
-    --             (equivalent
-    --                 A
-    --                 (and (not B) C)))
-    --         (a-box 
-    --             [betty : B]
-    --             [betty : C]
-    --             [betty ~ A])))
+    expect-equal(
+        true
+        is-consistent(
+            t-box( 
+                equivalent(
+                    A
+                    and( not( B) C)))
+            a-box( 
+                [betty : B]
+                [betty : C]
+                [betty ~ A])))
 
-    -- (expect-equal
-    --     true
-    --     (is-consistent
-    --         (t-box 
-    --             (equivalent
-    --                 A
-    --                 (or (not B) C)))
-    --         (a-box 
-    --             [betty ~ B]
-    --             [betty : C]
-    --             [betty : A])))
+    expect-equal(
+        true
+        is-consistent(
+            t-box( 
+                equivalent(
+                    A
+                    or( not( B) C)))
+            a-box( 
+                [betty ~ B]
+                [betty : C]
+                [betty : A])))
 
-    -- (expect-equal
-    --     true
-    --     (is-consistent
-    --         (t-box 
-    --             (equivalent
-    --                 A
-    --                 (or (not B) C)))
-    --         (a-box 
-    --             [betty : B]
-    --             [betty : C]
-    --             [betty : A])))
+    expect-equal(
+        true
+        is-consistent(
+            t-box( 
+                equivalent(
+                    A
+                    or( not( B) C)))
+            a-box( 
+                [betty : B]
+                [betty : C]
+                [betty : A])))
 
-    -- (expect-equal
-    --     false
-    --     (is-consistent
-    --         (t-box 
-    --             (equivalent
-    --                 A
-    --                 (and (not B) (exists c D))))
-    --         (a-box 
-    --             [betty : A]
-    --             [betty : B]
-    --             )))
-            )
+    expect-equal(
+        false
+        is-consistent(
+            t-box (
+                equivalent(
+                    A
+                    and (not (B) exists (c D))))
+            a-box( 
+                [betty : A]
+                [betty : B] ))))
