@@ -1,7 +1,15 @@
--- test-group(
---     "trans tests"
---     expect-equal(
---         "basic trans"
---         true
---         (is-consistent  
---             )))
+test-group(
+    "trans tests"
+    expect-equal(
+        "basic trans"
+        true
+        is-consistent(
+            definitions(trans(faster))
+            assertions([a faster b] [b faster c])))
+    expect-equal(
+        "basic trans clash"
+        false
+        is-consistent(
+            definitions(trans(faster))
+            assertions([a faster b] [b faster c] )))
+)
