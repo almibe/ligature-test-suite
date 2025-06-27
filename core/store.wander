@@ -1,0 +1,37 @@
+test-group(
+    "store tests"
+
+    expect-equal(
+      "empty kbs"
+      kbs()
+      set())
+
+    add-kb(test)
+
+    expect-equal(
+      "single kb"
+      kbs()
+      set(test))
+
+    add-kb(test2)
+    add-kb(test3)
+    remove-kb(test2)
+
+    expect-equal(
+      kbs()
+      set(test test3))
+
+    --(assert-store test (assertions [a : A]))
+)
+
+-- read-store test
+-- | filter (pattern [?name : B])
+-- | expect-equal (assertions [a : B]),
+
+-- read-assert-store test
+-- | expect-equal (assertions [a : A]),
+
+-- unassert-store test (assertions [a : A]),
+
+-- read-store test
+-- | expect-equal (assertions),
