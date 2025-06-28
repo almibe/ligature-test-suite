@@ -19,7 +19,7 @@ test-group(
             assertions (instance (a A))))
 
     expect-equal(
-        assertions ([betty ~ Animal] [betty : Animal])
+        assertions (instance(betty not(Animal)) instance(betty Animal))
         unfold(
             definitions (implies (Cat Animal))
-            assertions ([betty : Cat] [betty ~ Animal]))))
+            assertions (instance(betty Cat) instance(betty not(Animal))))))

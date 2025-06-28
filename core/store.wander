@@ -22,12 +22,30 @@ test-group(
       kbs()
       set(test test3))
 
-    assert-kb(test (assertions [a : A]))
+    expect-equal(
+      "read empty assertions"
+      read-assertions-kb(test)
+      assertions ())
 
-    -- assert
-    -- read asserts
-    -- remove asserts
-    -- read asserts
+    assert-kb(test assertions (instance (a A)))
+
+    expect-equal(
+      "read assertions"
+      read-assertions-kb(test)
+      assertions (instance (a A)))
+
+    assert-kb(test assertions( instance(b A) [a r b] [x y z]))
+
+    unassert-kb(test assertions([x y z]))
+
+    expect-equal(
+      "read assertions"
+      read-assertions-kb(test)
+      assertions(
+        instance(a A)
+        instance(b A)
+        [a r b]))
+
     -- add definitions
     -- read definitions
     -- remove definitions

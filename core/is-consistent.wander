@@ -5,14 +5,14 @@ test-group(
         true 
         is-consistent( 
             definitions()
-            assertions ([betty : Cat])))
+            assertions (instance(betty Cat))))
 
     expect-equal(
         "simple direct clash"
         false
         is-consistent( 
             definitions()
-            assertions ([betty : Cat] [betty ~ Cat])))
+            assertions(instance(betty Cat) instance(betty not(Cat)))))
     expect-equal(
         "clash with conjunction"
         false
@@ -87,7 +87,7 @@ test-group(
         "all with negation"
         is-consistent( 
             definitions()
-            assertions (instance (a all (b C)) [a b c] [c ~ C]))
+            assertions (instance (a all (b C)) [a b c] instance(c not(C))))
         false)
 
     -- top
@@ -98,13 +98,13 @@ test-group(
         false
         is-consistent(
             definitions()
-            assertions ([betty : Cat] [betty ~ Cat])))
+            assertions (instance(betty Cat) instance(betty not(Cat)))))
 
     expect-equal(
         false
         is-consistent(
             definitions (implies (Cat Animal))
-            assertions ([betty : Cat] [betty ~ Animal])))
+            assertions (instance(betty Cat) instance(betty not(Animal)))))
 
     expect-equal(
         false
@@ -120,14 +120,13 @@ test-group(
 
     expect-equal(
         true
-        is-consistent (definitions() assertions (instance (a or (B A)) [a ~ A])))
+        is-consistent (definitions() assertions (instance (a or (B A)) instance(a not(A)))))
 
     expect-equal(
         is-consistent(
             definitions()
             assertions (
-                [betty : Plant]
-                [betty : Carnivore]
+                instance(betty and(Plant Carnivore))
                 instance (betty or (not (Plant) not (Carnivore)))))
         false)
 
@@ -136,15 +135,13 @@ test-group(
         is-consistent(
             definitions()
             assertions( 
-                [betty : Plant]
-                [betty : Carnivore]
+                instance(betty and(Plant Carnivore))
                 instance (betty not (and (Plant Carnivore))))))
 
     expect-equal(
         false
         is-consistent(
-            definitions 
-                (equivalent (Dog Doggo))
+            definitions (equivalent (Dog Doggo))
             assertions(
                 instance (megan Dog)
                 instance (megan not (Doggo)))))
@@ -157,9 +154,8 @@ test-group(
                     CarnivorousPlant
                     and( Plant Carnivore)))
             assertions( 
-                [betty : Plant]
-                [betty : Carnivore]
-                [betty ~ CarnivorousPlant])))
+                instance(betty and(Plant Carnivore))
+                instance(betty not(CarnivorousPlant)))))
 
     expect-equal(
         true
@@ -169,9 +165,7 @@ test-group(
                     A
                     and( not( B) C)))
             assertions( 
-                [betty : B]
-                [betty : C]
-                [betty ~ A])))
+                instance (betty and(B C not(A))))))
 
     expect-equal(
         true
@@ -181,9 +175,8 @@ test-group(
                     A
                     or( not( B) C)))
             assertions( 
-                [betty ~ B]
-                [betty : C]
-                [betty : A])))
+                instance(betty not(B))
+                instance(betty and(A C)))))
 
     expect-equal(
         true
@@ -193,9 +186,9 @@ test-group(
                     A
                     or( not( B) C)))
             assertions( 
-                [betty : B]
-                [betty : C]
-                [betty : A])))
+                instance(betty B)
+                instance(betty C)
+                instance(betty A))))
 
     expect-equal(
         false
@@ -205,5 +198,4 @@ test-group(
                     A
                     and (not (B) exists (c D))))
             assertions( 
-                [betty : A]
-                [betty : B] ))))
+                instance (betty and(A B))))))

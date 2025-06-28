@@ -5,7 +5,7 @@ test-group(
         false
         is-consistent(
             definitions()
-            assertions (instance (a all (b C)) [a b c] [c ~ C])))
+            assertions (instance (a all (b C)) [a b c] instance(c not(C)))))
 
     expect-equal(
         "basic check"
@@ -17,8 +17,8 @@ test-group(
                     all (degree-from School)))
             assertions( 
                 [bob degree-from example-university] 
-                [bob : Person]
-                [example-university : School])))
+                instance(bob Person)
+                instance(example-university School))))
 
     expect-equal(
         ""
@@ -30,7 +30,7 @@ test-group(
                     all(degree-from School)))
             assertions( 
                 [bob degree-from example-university] 
-                [bob ~ Person])))
+                instance(bob not(Person)))))
 
     expect-equal(
         "example inconsistency with all"
@@ -41,6 +41,6 @@ test-group(
                     Member 
                     all(member-of Group)))
             assertions( 
-                [bob : Member]
+                instance(bob Member)
                 [bob member-of group1] 
-                [group1 ~ Group]))))
+                instance(group1 not(Group))))))
