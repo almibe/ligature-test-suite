@@ -14,7 +14,7 @@ test-group (
     assertions (a { A }))
 
   expect-equal(
-    assertions ([a : A] [a : B])
+    assertions ((instance a A) (instance a B))
     assertions ( a { A B }))
 
   expect-equal(

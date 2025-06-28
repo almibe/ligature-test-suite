@@ -2,14 +2,14 @@ test-group(
     "store tests"
 
     expect-equal(
-      "empty kbs"
+      "empty KBs"
       kbs()
       set())
 
     add-kb(test)
 
     expect-equal(
-      "single kb"
+      "single KB"
       kbs()
       set(test))
 
@@ -18,10 +18,21 @@ test-group(
     remove-kb(test2)
 
     expect-equal(
+      "adding and removing KBs"
       kbs()
       set(test test3))
 
-    --(assert-store test (assertions [a : A]))
+    assert-kb(test (assertions [a : A]))
+
+    -- assert
+    -- read asserts
+    -- remove asserts
+    -- read asserts
+    -- add definitions
+    -- read definitions
+    -- remove definitions
+    -- read definitions
+
 )
 
 -- read-store test
