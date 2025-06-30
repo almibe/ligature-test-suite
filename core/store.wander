@@ -46,21 +46,22 @@ test-group(
         instance(b A)
         [a r b]))
 
-    -- add definitions
-    -- read definitions
-    -- remove definitions
-    -- read definitions
+    expect-equal(
+        "read empty definitions"
+        read-definitions-kb(test)
+        definitions())
 
-)
+    define-kb(test definitions(equivalent(A B)))
 
--- read-store test
--- | filter (pattern [?name : B])
--- | expect-equal (assertions [a : B]),
+    expect-equal(
+        "add definitions"
+        read-definitions-kb(test)
+        definitions(equivalent(A B)))
 
--- read-assert-store test
--- | expect-equal (assertions [a : A]),
+    define-kb(test definitions(equivalent(A C) equivalent(A D)))
+    undefine-kb(test definitions(equivalent(A C)))
 
--- unassert-store test (assertions [a : A]),
-
--- read-store test
--- | expect-equal (assertions),
+    expect-equal(
+        "read definitions"
+        read-definitions-kb(test)
+        definitions(equivalent(A B) equivalent(A D))))
