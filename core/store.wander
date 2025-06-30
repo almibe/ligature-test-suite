@@ -24,23 +24,23 @@ test-group(
 
     expect-equal(
       "read empty assertions"
-      read-assertions-kb(test)
+      read-assertions(test)
       assertions ())
 
-    assert-kb(test assertions (instance (a A)))
+    assert(test assertions (instance (a A)))
 
     expect-equal(
       "read assertions"
-      read-assertions-kb(test)
+      read-assertions(test)
       assertions (instance (a A)))
 
-    assert-kb(test assertions( instance(b A) [a r b] [x y z]))
+    assert(test assertions( instance(b A) [a r b] [x y z]))
 
-    unassert-kb(test assertions([x y z]))
+    unassert(test assertions([x y z]))
 
     expect-equal(
       "read assertions"
-      read-assertions-kb(test)
+      read-assertions(test)
       assertions(
         instance(a A)
         instance(b A)
@@ -48,20 +48,25 @@ test-group(
 
     expect-equal(
         "read empty definitions"
-        read-definitions-kb(test)
+        read-definitions(test)
         definitions())
 
-    define-kb(test definitions(equivalent(A B)))
+    define(test definitions(equivalent(A B)))
 
     expect-equal(
         "add definitions"
-        read-definitions-kb(test)
+        read-definitions(test)
         definitions(equivalent(A B)))
 
-    define-kb(test definitions(equivalent(A C) equivalent(A D)))
-    undefine-kb(test definitions(equivalent(A C)))
+    define(test definitions(equivalent(A C) equivalent(A D)))
+    undefine(test definitions(equivalent(A C)))
 
     expect-equal(
         "read definitions"
-        read-definitions-kb(test)
-        definitions(equivalent(A B) equivalent(A D))))
+        read-definitions(test)
+        definitions(equivalent(A B) equivalent(A D)))
+    
+    expect-equal(
+        "calling is-consistent"
+        is-consistent(test)
+        true))
