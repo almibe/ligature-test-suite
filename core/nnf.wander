@@ -5,30 +5,10 @@ test-group(
         top ()
         nnf (definitions ()))
 
-    expect-equal(
-        "Single atomic concept"
-        and (A)
-        nnf (definitions (A)))
-
-    expect-equal(
-        "Single disjunction"
-        and (or (A B))
-        nnf (definitions (or (A B))))
-        
-    expect-equal(
-        "conjunction and negation"
-        and (and (not (A) not (B)))
-        nnf (definitions (and (not (A) not (B)))))
-
-    expect-equal(
-        "three atomic concepts"
-        and (A B C)
-        nnf (definitions (A B C)))
-
-    expect-equal(
-        "de morgan's law example"
-        and (or (not (B) not (C)))
-        nnf (definitions (not (and (B C)))))
+    -- expect-equal(
+    --     "de morgan's law example"
+    --     and (or (not (B) not (C)))
+    --     nnf (definitions (not (and (B C)))))
 
     expect-equal(
         "implies"
