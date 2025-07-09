@@ -87,7 +87,7 @@ test-group(
         "all with negation"
         is-consistent( 
             definitions()
-            assertions (instance (a all (b C)) [a b c] instance(c not(C))))
+            assertions (instance (a all (b C)) rel(a b c) instance(c not(C))))
         false)
 
     -- top

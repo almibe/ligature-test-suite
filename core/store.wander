@@ -4,14 +4,14 @@ test-group(
     expect-equal(
       "empty KBs"
       kbs()
-      set())
+      seq())
 
     add-kb(test)
 
     expect-equal(
       "single KB"
       kbs()
-      set(test))
+      seq(test))
 
     add-kb(test2)
     add-kb(test3)
@@ -20,7 +20,7 @@ test-group(
     expect-equal(
       "adding and removing KBs"
       kbs()
-      set(test test3))
+      seq(test test3))
 
     expect-equal(
       "read empty assertions"
@@ -34,9 +34,9 @@ test-group(
       read-assertions(test)
       assertions (instance (a A)))
 
-    assert(test assertions( instance(b A) [a r b] [x y z]))
+    assert(test assertions( instance(b A) rel(a r b) rel(x y z)))
 
-    unassert(test assertions([x y z]))
+    unassert(test assertions(rel(x y z)))
 
     expect-equal(
       "read assertions"
@@ -44,7 +44,7 @@ test-group(
       assertions(
         instance(a A)
         instance(b A)
-        [a r b]))
+        rel(a r b)))
 
     expect-equal(
         "read empty definitions"
@@ -67,7 +67,7 @@ test-group(
         definitions(equivalent(A B) equivalent(A D)))
     
     add-kb(test2)
-    assert(test2 assertions ([a b c]))
+    assert(test2 assertions (rel(a b c)))
 
     expect-equal(
         "calling is-consistent"

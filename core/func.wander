@@ -5,23 +5,23 @@ test-group(
         true
         is-consistent(
             definitions (equivalent (A func (a)))
-            assertions ([x a b] instance (x A))))
+            assertions (rel(x a b) instance (x A))))
     expect-equal(
         "allow multiple expressions of the same individual"
         true
         is-consistent(
             definitions (equivalent (A func (a)))
-            assertions ([x a b] [x a c] instance (x A))))
+            assertions (rel(x a b) rel(x a c) instance (x A))))
     expect-equal(
         "don't allow multiple instances"
         false
         is-consistent(
             definitions (equivalent (A func (a)))
-            assertions ([x a b] [x a c] different (b c) instance (x A))))
+            assertions (rel(x a b) rel(x a c) different (b c) instance (x A))))
 
     expect-equal(
         "not func test"
         true
         is-consistent(
             definitions (equivalent (A func (a)))
-            assertions ([x a b] instance (x not (A))))))
+            assertions (rel(x a b) instance (x not (A))))))
