@@ -18,12 +18,12 @@ test-group(
         "single role"
         tableau-models (
             definitions() 
-            assertions (rel(a b c)))
-        seq(assertions(rel(a b c))))
+            assertions (triple(a b c)))
+        seq(assertions(triple(a b c))))
 
     expect-equal(
         "single role"
         tableau-models (
             definitions() 
-            assertions (rel(a b c)))
-        seq(assertions(rel(a b c)))))
+            assertions (triple(a b c)))
+        seq(assertions(triple(a b c)))))

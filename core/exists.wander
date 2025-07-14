@@ -9,7 +9,7 @@ test-group(
                     exists( member-of Group)))
             assertions( 
                 instance(group1 Group)
-                rel(bob member-of group1) 
+                triple(bob member-of group1) 
                 instance(bob not(Member)))))
     expect-equal(
         "contradiction with unqualified exists and attribute"
@@ -20,5 +20,5 @@ test-group(
                     Named 
                     exists (name)))
             assertions( 
-                rel(bob name Bob) 
+                triple(bob name Bob) 
                 instance(bob not(Named))))))

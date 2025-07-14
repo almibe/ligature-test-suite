@@ -5,7 +5,7 @@ test-group(
         false
         is-consistent(
             definitions()
-            assertions (instance (a all (b C)) rel(a b c) instance(c not(C)))))
+            assertions (instance (a all (b C)) triple(a b c) instance(c not(C)))))
 
     expect-equal(
         "basic check"
@@ -16,7 +16,7 @@ test-group(
                     Person 
                     all (degree-from School)))
             assertions( 
-                rel(bob degree-from example-university) 
+                triple(bob degree-from example-university) 
                 instance(bob Person)
                 instance(example-university School))))
 
@@ -29,7 +29,7 @@ test-group(
                     Person 
                     all(degree-from School)))
             assertions( 
-                rel(bob degree-from example-university) 
+                triple(bob degree-from example-university) 
                 instance(bob not(Person)))))
 
     expect-equal(
@@ -42,5 +42,5 @@ test-group(
                     all(member-of Group)))
             assertions( 
                 instance(bob Member)
-                rel(bob member-of group1) 
+                triple(bob member-of group1) 
                 instance(group1 not(Group))))))

@@ -1,0 +1,7 @@
+test-group (
+    "count tests"
+    expect-equal("0" count( assertions()))
+    expect-equal("1" count( assertions( triple(a b c))))
+    expect-equal("0" count( seq()))
+    expect-equal("3" count( seq(a b c)))
+    expect-equal("2" count( assertions( triple(a b c) instance(e E)))))

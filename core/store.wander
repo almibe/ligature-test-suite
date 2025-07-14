@@ -34,9 +34,9 @@ test-group(
       read-assertions(test)
       assertions (instance (a A)))
 
-    assert(test assertions( instance(b A) rel(a r b) rel(x y z)))
+    assert(test assertions( instance(b A) triple(a r b) triple(x y z)))
 
-    unassert(test assertions(rel(x y z)))
+    unassert(test assertions(triple(x y z)))
 
     expect-equal(
       "read assertions"
@@ -44,7 +44,7 @@ test-group(
       assertions(
         instance(a A)
         instance(b A)
-        rel(a r b)))
+        triple(a r b)))
 
     expect-equal(
         "read empty definitions"
@@ -67,7 +67,7 @@ test-group(
         definitions(equivalent(A B) equivalent(A D)))
     
     add-kb(test2)
-    assert(test2 assertions (rel(a b c)))
+    assert(test2 assertions (triple(a b c)))
 
     expect-equal(
         "calling is-consistent"
