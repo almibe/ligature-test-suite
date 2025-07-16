@@ -1,6 +1,7 @@
-(test-group
+test-group(
    "pipe tests"
-   (->
-      (assertions [a b c])
-      (count)
-      (expect-equal "1")))
+   expect-equal(
+      pipe(
+         assertions(triple(a b c)) 
+         count())
+      "1"))

@@ -1,0 +1,24 @@
+$test = fn( -> test)
+
+$id = fn($value -> $value)
+
+$middle = fn($left $middle $right -> $middle)
+
+test-group(
+    "fn tests"
+    expect-equal(
+        "basic creation test"
+        fn(->)
+        fn(->))
+    expect-equal(
+        "basic const return"
+        test
+        $test())
+    expect-equal(
+        "calling with arg"
+        test
+        $id(test))
+    expect-equal(
+        "calling with multiple args"
+        2
+        $middle(1 2 3)))
