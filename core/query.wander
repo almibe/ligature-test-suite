@@ -1,0 +1,31 @@
+test-group(
+    "query tests"
+    expect-equal(
+        "empty query"
+        query(
+            definitions()
+            assertions()
+            top())
+        seq())
+    expect-equal(
+        "simple assertions query"
+        query(
+            definitions()
+            assertions(instance(betty Cat))
+            Cat)
+        seq(betty{}))
+    expect-equal(
+        "simple assertions query with multiple matches"
+        query(
+            definitions()
+            assertions(instance(betty Cat) instance(peggy Cat))
+            Cat)
+        seq(betty{ } peggy{  }))
+    expect-equal(
+        "simple assertions query with multiple matches and a non-match"
+        query(
+            definitions()
+            assertions(instance(betty Cat) instance(peggy Cat) instance(megan Dog) triple(betty name "Betty"))
+            Cat)
+        seq(betty{ } peggy{  }))
+)
