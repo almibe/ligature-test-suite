@@ -11,6 +11,10 @@ test-group(
         fn(->)
         fn(->))
     expect-equal(
+        "basic creation test with arg"
+        fn($a -> $a)
+        fn($a -> $a))
+    expect-equal(
         "basic const return"
         test
         $test())

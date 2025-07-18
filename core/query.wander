@@ -28,4 +28,11 @@ test-group(
             assertions(instance(betty Cat) instance(peggy Cat) instance(megan Dog) triple(betty name "Betty"))
             Cat)
         seq(betty{ } peggy{  }))
-)
+    expect-equal(
+        "simple assertions query with role"
+        query(
+            definitions(implies(Cat exists(name)))
+            assertions(instance(betty Cat) triple(betty name "Betty"))
+            Cat)
+        seq(betty{ name { "Betty" } } ))
+    )
