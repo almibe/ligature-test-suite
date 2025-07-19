@@ -2,7 +2,7 @@ test-group (
   "assertions specs"
   expect-equal(
     assertions(triple(a b c))
-    assertions(a { b { c } })))
+    assertions(element(a concepts() links(link(b c)))))
 
   -- expect-equal(
   --   assertions ([a b c] [a e f])
