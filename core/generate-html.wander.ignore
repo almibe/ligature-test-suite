@@ -1,6 +1,0 @@
-test-group(
-    "generate-html tests"
-    expect-equal(
-        "single p tag"
-        "<p>Test</p>"
-        generate-html(p { "Test" })))
