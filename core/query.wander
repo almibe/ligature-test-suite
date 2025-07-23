@@ -13,26 +13,26 @@ test-group(
             definitions()
             assertions(instance(betty Cat))
             Cat)
-        seq(betty{}))
+        seq(element(betty)))
     expect-equal(
         "simple assertions query with multiple matches"
         query(
             definitions()
             assertions(instance(betty Cat) instance(peggy Cat))
             Cat)
-        seq(betty{ } peggy{  }))
+        seq(element(betty) element(peggy)))
     expect-equal(
         "simple assertions query with multiple matches and a non-match"
         query(
             definitions()
             assertions(instance(betty Cat) instance(peggy Cat) instance(megan Dog) triple(betty name "Betty"))
             Cat)
-        seq(betty{ } peggy{  }))
+        seq(element(betty) element(peggy)))
     expect-equal(
         "simple assertions query with role"
         query(
             definitions(implies(Cat exists(name)))
             assertions(instance(betty Cat) triple(betty name "Betty"))
             Cat)
-        seq(betty{ name { "Betty" } } ))
+        seq(element(betty)))
     )

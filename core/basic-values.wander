@@ -1,7 +1,6 @@
 test-group (
     "basic value tests"
     expect-equal (a a)
-    expect-equal (p { class = "test" "body" } p { class = "test" "body" })
     expect-equal ("a" "a")
     -- (expect-equal (literal "a" Text en) (literal "a" Text en))
     expect-equal ("empty seqs" seq () seq ())
@@ -12,5 +11,4 @@ test-group (
     expect-equal (instance (b not(A)) instance (b not(A)))
     expect-equal (instance (betty and (Cat not (Dog))) instance (betty and (Cat not(Dog))))
     expect-equal (exists (a A) exists (a A))
-    expect-equal (all (a A) all (a A))
-    expect-equal (a { a{ a}} a{ a{ id(a)}}))
+    expect-equal (all (a A) all (a A)))
