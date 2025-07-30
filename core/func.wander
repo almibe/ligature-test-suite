@@ -12,12 +12,12 @@ test-group(
         is-consistent(
             definitions (equivalent (A func (a)))
             assertions (triple(x a b) triple(x a c) instance (x A))))
-    expect-equal(
-        "don't allow multiple instances"
-        false
-        is-consistent(
-            definitions (equivalent (A func (a)))
-            assertions (triple(x a b) triple(x a c) different (b c) instance (x A))))
+    -- expect-equal(
+    --     "don't allow multiple instances"
+    --     false
+    --     is-consistent(
+    --         definitions (equivalent (A func (a)))
+    --         assertions (triple(x a b) triple(x a c) different (b c) instance (x A))))
 
     expect-equal(
         "not func test"

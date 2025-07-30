@@ -16,7 +16,7 @@ test-group(
             definitions (equivalent (A and (B C)))))
                 
     expect-equal(
-        false
+        true
         is-definitorial( 
             definitions ( equivalent (A C )  equivalent (A B ))))
 

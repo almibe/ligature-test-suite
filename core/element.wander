@@ -2,11 +2,11 @@ test-group (
   "assertions specs"
   expect-equal(
     assertions(triple(a b c))
-    assertions(element(a links(b = c))))
+    assertions(element(a b -> c)))
 
   expect-equal(
     assertions (triple(a b c) triple(a e f))
-    assertions (element(a links(b = c e = f))))
+    assertions (element(a b -> c e -> f)))
     
   expect-equal(
     assertions (instance (a A))
@@ -14,4 +14,9 @@ test-group (
 
   expect-equal(
     assertions (instance(a A) instance(a B))
-    assertions (element(a seq(A B)))))
+    assertions (element(a seq(A B))))
+  
+  -- expect-equal(
+  --   element(a b -> c d -> seq(e element(f g -> h)))
+  -- )
+  )

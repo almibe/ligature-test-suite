@@ -1,0 +1,47 @@
+test-group(
+    "nominals tests"
+    expect-equal(
+        true
+        is-consistent(
+            definitions(equivalent(A nominal(a)))
+            assertions(instance(b: A)))))
+    -- expect-equal(
+    --     true
+    --     is-consistent(
+    --         definitions(equivalent(Handedness nominals(left right mixed)))
+    --         assertions(instance(left Handedness))))
+    -- expect-equal(
+    --     false
+    --     is-consistent(
+    --         definitions(equivalent(Handedness nominals(left right mixed)))
+    --         assertions(instance(left not(Handedness))))))
+
+-- test-group(
+--     "same tests"
+--     expect-equal(
+--         "basic same test"
+--         true
+--         is-consistent(
+--             definitions ()
+--             assertions (same (a b))))
+--     expect-equal(
+--         "basic inconsistency with same and different"
+--         false
+--         is-consistent(
+--             definitions()
+--             assertions (same (a b) different (a b)))))
+
+-- test-group(
+--     "different tests"
+--     expect-equal(
+--         "basic different test"
+--         true
+--         is-consistent(
+--             definitions ()
+--             assertions (different (a b))))
+--     expect-equal(
+--         "basic inconsistency with differnt"
+--         false
+--         is-consistent(
+--             definitions()
+--             assertions (different (a a)))))
