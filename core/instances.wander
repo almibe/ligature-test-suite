@@ -1,36 +1,36 @@
 test-group(
-    "query tests"
+    "instances tests"
     expect-equal(
-        "empty query"
-        query(
+        "empty instances"
+        instances(
             definitions()
             assertions()
             top())
         seq())
     expect-equal(
-        "simple assertions query"
-        query(
+        "simple assertions instances"
+        instances(
             definitions()
             assertions(instance(betty Cat))
             Cat)
         seq(element(betty)))
     expect-equal(
-        "simple assertions query with multiple matches"
-        query(
+        "simple assertions instances with multiple matches"
+        instances(
             definitions()
             assertions(instance(betty Cat) instance(peggy Cat))
             Cat)
         seq(element(betty) element(peggy)))
     expect-equal(
-        "simple assertions query with multiple matches and a non-match"
-        query(
+        "simple assertions instances with multiple matches and a non-match"
+        instances(
             definitions()
             assertions(instance(betty Cat) instance(peggy Cat) instance(megan Dog) triple(betty name "Betty"))
             Cat)
         seq(element(betty) element(peggy)))
     expect-equal(
-        "simple assertions query with role"
-        query(
+        "simple assertions instances with role"
+        instances(
             definitions(implies(Cat exists(name)))
             assertions(instance(betty Cat) triple(betty name "Betty"))
             Cat)

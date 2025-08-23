@@ -2,6 +2,7 @@ test-group (
     "basic value tests"
     expect-equal (a a)
     expect-equal ("a" "a")
+    expect-equal (?a ?a)
     -- (expect-equal (literal "a" Text en) (literal "a" Text en))
     expect-equal ("empty seqs" seq () seq ())
     expect-equal (assertions() assertions())
