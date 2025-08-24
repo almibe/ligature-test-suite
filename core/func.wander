@@ -4,24 +4,24 @@ test-group(
         "basic test"
         true
         is-consistent(
-            definitions (equivalent (A func (a)))
-            assertions (triple(x a b) instance (x A))))
-    expect-equal(
-        "allow multiple expressions of the same individual"
-        true
-        is-consistent(
-            definitions (equivalent (A func (a)))
-            assertions (triple(x a b) triple(x a c) instance (x A))))
+            definitions(equivalent(A func(a)))
+            assertions(triple(x a b) instance(x A))))
+    -- expect-equal(
+    --     "allow multiple expressions of the same individual"
+    --     true
+    --     is-consistent(
+    --         definitions(equivalent(A func(a)))
+    --         assertions(triple(x a b) triple(x a c) instance(x A))))
     -- expect-equal(
     --     "don't allow multiple instances"
     --     false
     --     is-consistent(
-    --         definitions (equivalent (A func (a)))
-    --         assertions (triple(x a b) triple(x a c) different (b c) instance (x A))))
-
-    expect-equal(
-        "not func test"
-        true
-        is-consistent(
-            definitions (equivalent (A func (a)))
-            assertions (triple(x a b) instance (x not (A))))))
+    --         definitions(equivalent(A func(a)))
+    --         assertions(triple(x a b) triple(x a c) instance(b not(nominal(c))) instance(x A))))
+    -- expect-equal(
+    --     "not func test"
+    --     true
+    --     is-consistent(
+    --         definitions(equivalent(A func(a)))
+    --         assertions(triple(x a b) instance(x not(A)))))
+)

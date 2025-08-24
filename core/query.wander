@@ -1,0 +1,18 @@
+test-group(
+    "query tests"
+    expect-equal(
+        "empty query"
+        query(
+            definitions()
+            assertions()
+            pattern())
+        result-set())
+    expect-equal(
+        "simple query"
+        query(
+            definitions()
+            assertions(triple(a b c))
+            pattern(triple(?a b c)))
+        result-set(
+            result(?a -> a)))
+    )
