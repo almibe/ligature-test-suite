@@ -6,14 +6,13 @@ test-group(
             definitions()
             assertions()
             top())
-        selections())
+        set())
     expect-equal(
         "simple select"
         select(
             definitions()
             assertions(triple(a b c))
             top())
-        selections(
-            selection(a assertions(triple(a b c)))
-            selection(c assertions())))
-    )
+        set(
+            assertions(triple(a b c))
+            assertions())))

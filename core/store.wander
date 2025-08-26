@@ -4,14 +4,14 @@ test-group(
     expect-equal(
       "empty KBs"
       kbs()
-      seq())
+      set())
 
     add-kb(test)
 
     expect-equal(
       "single KB"
       kbs()
-      seq(test))
+      set(test))
 
     add-kb(test2)
     add-kb(test3)
@@ -20,7 +20,7 @@ test-group(
     expect-equal(
       "adding and removing KBs"
       kbs()
-      seq(test test3))
+      set(test test3))
 
     expect-equal(
       "read empty assertions"

@@ -3,12 +3,8 @@ test-group(
     expect-equal(a a)
     expect-equal(unit() unit())
     expect-equal("a" "a")
-    expect-equal(selection("a" assertions()) selection("a" assertions()))
-    expect-equal(
-        selections(selection("a" assertions())) 
-        selections(selection("a" assertions())))
     -- expect-equal(element(a Text en) element(a Text en))
-    expect-equal("empty seqs" seq() seq())
+    expect-equal("empty sets" set() set())
     expect-equal(assertions() assertions())
     expect-equal(assertions(triple(a b c)) assertions(triple(a b c)))
     expect-equal(assertions(triple(a b c) triple(d e f)) assertions(triple(d e f) triple(a b c)))

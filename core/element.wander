@@ -10,13 +10,13 @@ test-group (
     
   expect-equal(
     assertions (instance (a A))
-    assertions (element(a seq(A))))
+    assertions (element(a set(A))))
 
   expect-equal(
     assertions (instance(a A) instance(a B))
-    assertions (element(a seq(A B))))
+    assertions (element(a set(A B))))
   
   -- expect-equal(
-  --   element(a b -> c d -> seq(e element(f g -> h)))
+  --   element(a b -> c d -> set(e element(f g -> h)))
   -- )
   )

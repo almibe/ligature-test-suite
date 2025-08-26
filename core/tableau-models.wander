@@ -5,25 +5,25 @@ test-group(
         tableau-models(
             definitions() 
             assertions()) 
-        seq (assertions()))
+        set (assertions()))
 
     expect-equal(
         "single instance"
         tableau-models (
             definitions() 
             assertions(instance (a A)))
-        seq(assertions(instance (a A))))
+        set(assertions(instance (a A))))
 
     expect-equal(
         "single role"
         tableau-models (
             definitions() 
             assertions (triple(a b c)))
-        seq(assertions(triple(a b c))))
+        set(assertions(triple(a b c))))
 
     expect-equal(
         "single role"
         tableau-models (
             definitions() 
             assertions (triple(a b c)))
-        seq(assertions(triple(a b c)))))
+        set(assertions(triple(a b c)))))

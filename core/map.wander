@@ -1,6 +1,6 @@
 test-group(
     "map tests"
     expect-equal(
-        "map empty seq with id"
-        seq()
-        map(id seq())))
+        "map empty set with id"
+        set()
+        map(id set())))
