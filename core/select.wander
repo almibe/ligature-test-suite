@@ -1,0 +1,19 @@
+test-group(
+    "select tests"
+    expect-equal(
+        "empty select"
+        select(
+            definitions()
+            assertions()
+            top())
+        selections())
+    expect-equal(
+        "simple select"
+        select(
+            definitions()
+            assertions(triple(a b c))
+            top())
+        selections(
+            selection(a assertions(triple(a b c)))
+            selection(c assertions())))
+    )
