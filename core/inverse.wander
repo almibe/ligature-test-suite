@@ -1,0 +1,15 @@
+test-group(
+    "inverse role tests"
+    expect-equal(
+        instances(
+            definitions()
+            assertions(triple(a b c))
+            inverse(b))
+        set(c))
+
+    -- expect-equal(
+    --     (assertions [Ohio member-of Midwest] [Midwest contains Ohio])
+    --     (infer (assertions [member-of tiny-dl.inverse-of contains]) (assertions [Ohio member-of Midwest])))
+
+)
+
