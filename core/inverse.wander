@@ -5,7 +5,7 @@ test-group(
             definitions()
             assertions(triple(a b c))
             inverse(b))
-        set(c))
+        set("c"))
 
     -- expect-equal(
     --     (assertions [Ohio member-of Midwest] [Midwest contains Ohio])

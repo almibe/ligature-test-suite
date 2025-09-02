@@ -1,0 +1,5 @@
+test-group(
+   "pipe tests"
+   expect-equal(
+      assertions(triple(a b c)) | count()
+      "1"))

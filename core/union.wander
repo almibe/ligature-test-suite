@@ -1,0 +1,5 @@
+test-group(
+    "union tests"
+    expect-equal(
+        union(assertions(triple(a b c)) assertions(triple(d e f)))
+        assertions(triple(a b c) triple(d e f))))

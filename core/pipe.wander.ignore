@@ -1,7 +1,0 @@
-test-group(
-   "pipe tests"
-   expect-equal(
-      pipe(
-         assertions(triple(a b c)) 
-         count())
-      "1"))

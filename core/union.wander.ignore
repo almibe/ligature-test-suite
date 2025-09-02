@@ -1,5 +1,0 @@
-test-group (
-    "union tests"
-    expect-equal (
-        union (assertions ([a b c]) assertions ([d e f]))
-        assertions ([a b c] [d e f])))
